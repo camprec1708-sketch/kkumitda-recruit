@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://camprec1708-sketch.github.io/kkumitda-recruit/sitemap.xml

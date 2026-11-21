@@ -9,6 +9,7 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="꿈잇다 최강본부">
 <meta name="theme-color" content="#FBF8F1">
+<meta name="google-site-verification" content="XlEmnmgNGYd7jh_NKAZsnSX_-OA-OlC_sBv94L_Co5g">
 <link rel="icon" type="image/png" href="kkumitda-symbol.png">
 <link rel="canonical" href="https://camprec1708-sketch.github.io/kkumitda-recruit/">
 <meta property="og:type" content="website">
@@ -598,6 +599,35 @@
   .form-status{margin:12px 0 0;font-size:12.5px;color:var(--gold-deep);font-weight:600;min-height:18px}
   .form-status.err{color:#B2402C}
   .copy-fallback{position:absolute;left:-9999px;top:0}
+  /* consent */
+  .consent-field{gap:8px}
+  .consent-row{display:flex;gap:9px;align-items:flex-start;cursor:pointer;font-size:12.5px;line-height:1.6;color:var(--ink);font-weight:700;letter-spacing:-.01em}
+  .consent-row input[type="checkbox"]{
+    appearance:none;-webkit-appearance:none;flex:0 0 auto;width:19px;height:19px;margin:1px 0 0;
+    border-radius:6px;border:1px solid #D9C79E;background:#FFFDF7;display:grid;place-items:center;
+    cursor:pointer;transition:border-color .2s ease,background .2s ease,box-shadow .2s ease;
+  }
+  .consent-row input[type="checkbox"]::after{
+    content:"";width:10px;height:5px;margin-top:-2px;
+    border-left:2.2px solid #FFF;border-bottom:2.2px solid #FFF;
+    transform:rotate(-45deg);opacity:0;transition:opacity .15s ease;
+  }
+  .consent-row input[type="checkbox"]:checked{
+    background:linear-gradient(160deg,#D4AF37,#9B7414);border-color:rgba(155,116,20,.85);
+    box-shadow:0 1px 3px rgba(155,116,20,.28);
+  }
+  .consent-row input[type="checkbox"]:checked::after{opacity:1}
+  .consent-row input[type="checkbox"]:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(212,175,55,.28)}
+  .consent-row .req{color:var(--gold-deep);font-size:11px;font-weight:900}
+  .consent-row a{color:var(--gold-deep);border-bottom:1px solid rgba(180,137,31,.55);padding-bottom:1px}
+  .consent-detail{
+    margin:0;padding:11px 13px;border-radius:11px;
+    border:1px solid rgba(180,137,31,.20);background:rgba(212,175,55,.07);
+    font-size:11.5px;line-height:1.8;color:var(--muted-2);font-weight:500;
+  }
+  .consent-detail b{color:var(--muted);font-weight:800}
+  .consent-detail a{color:var(--gold-deep);border-bottom:1px solid rgba(180,137,31,.55);padding-bottom:1px}
+  .field.invalid .consent-row input[type="checkbox"]{border-color:#C0533F;box-shadow:0 0 0 3px rgba(192,83,63,.12)}
 
   /* ---------- footer ---------- */
   .site-footer{padding:38px 0 40px;background:linear-gradient(180deg,#F5ECDB,#F1E6D1);border-top:1px solid rgba(180,137,31,.3)}
@@ -1119,6 +1149,21 @@
             <span class="hint"></span>
           </div>
 
+          <div class="field consent-field" id="fieldConsent">
+            <label class="consent-row" for="fConsent">
+              <input id="fConsent" name="consent" type="checkbox" value="agree" required>
+              <span>개인정보 수집·이용에 동의합니다. <span class="req">필수</span></span>
+            </label>
+            <p class="consent-detail">
+              <b>수집 항목</b> — 성함·연락처(필수), 지역·관심 분야·하고 싶은 말(선택)<br>
+              <b>이용 목적</b> — 상담 신청 접수, 본인 확인 및 상담 진행<br>
+              <b>보유·이용 기간</b> — 접수일로부터 최대 30일 보관 후 파기<br>
+              동의를 거부할 수 있으며, 거부 시 상담 신청 접수가 어렵습니다.
+              <a href="https://kkumitda.com/privacy" target="_blank" rel="noopener">개인정보처리방침 전체 보기</a>
+            </p>
+            <span class="hint" id="hintConsent"></span>
+          </div>
+
           <div class="form-actions">
             <button class="btn btn-gold" type="submit" id="smsBtn">
               <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 8.9 8.9 0 0 1-3.9-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg>
@@ -1129,7 +1174,7 @@
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
           <p class="form-foot">
             입력한 내용은 서버에 저장되지 않습니다. 휴대폰 문자 앱에 내용이 채워지며, <b>발송 버튼은 직접 눌러 주세요.</b>
-            개인정보는 상담 목적으로만 사용하고, 상담 종료 후 파기합니다.
+            개인정보는 상담 목적으로만 사용하며, 접수일로부터 최대 30일 보관 후 파기합니다. (<a href="https://kkumitda.com/privacy" target="_blank" rel="noopener">개인정보처리방침</a>)
           </p>
           <textarea class="copy-fallback" id="copyFallback" aria-hidden="true" tabindex="-1"></textarea>
         </form>
@@ -1254,6 +1299,9 @@
   var fInterest = document.getElementById('fInterest');
   var fMsg = document.getElementById('fMsg');
   var statusEl = document.getElementById('formStatus');
+  var fConsent = document.getElementById('fConsent');
+  var fieldConsent = document.getElementById('fieldConsent');
+  var hintConsent = document.getElementById('hintConsent');
   var fieldName = document.getElementById('fieldName');
   var fieldPhone = document.getElementById('fieldPhone');
   var hintName = document.getElementById('hintName');
@@ -1278,8 +1326,10 @@
     var ok = true;
     fieldName.classList.remove('invalid');
     fieldPhone.classList.remove('invalid');
+    fieldConsent.classList.remove('invalid');
     hintName.textContent = '';
     hintPhone.textContent = '';
+    hintConsent.textContent = '';
     if (digits(fName.value).length === 0 && fName.value.trim().length < 2) {
       fieldName.classList.add('invalid');
       hintName.textContent = '성함을 2자 이상 입력해 주세요.';
@@ -1289,6 +1339,11 @@
     if (!/^01[016789]\d{7,8}$/.test(pd)) {
       fieldPhone.classList.add('invalid');
       hintPhone.textContent = '휴대폰 번호를 정확히 입력해 주세요. (예: 010-1234-5678)';
+      ok = false;
+    }
+    if (!fConsent.checked) {
+      fieldConsent.classList.add('invalid');
+      hintConsent.textContent = '개인정보 수집·이용에 동의해 주세요. (필수)';
       ok = false;
     }
     return ok;
@@ -1302,12 +1357,19 @@
     lines.push('관심분야: ' + fInterest.value);
     if (fMsg.value.trim()) lines.push('문의: ' + fMsg.value.trim());
     lines.push('');
+    lines.push('개인정보 수집·이용 동의: 동의함');
     lines.push('(홈페이지 신청서로 작성)');
     return lines.join('\n');
   }
 
   fPhone.addEventListener('blur', function () {
     if (digits(fPhone.value).length >= 10) fPhone.value = formatPhone(fPhone.value.trim());
+  });
+  fConsent.addEventListener('change', function () {
+    if (fConsent.checked) {
+      fieldConsent.classList.remove('invalid');
+      hintConsent.textContent = '';
+    }
   });
   [fName, fPhone].forEach(function (el) {
     el.addEventListener('input', function () {
