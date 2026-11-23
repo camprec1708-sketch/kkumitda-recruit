@@ -94,7 +94,10 @@
   .card-head h2{margin:0;font-size:clamp(17px,2.9vw,20.5px);font-weight:900;letter-spacing:-.01em;line-height:1.4}
   .card-head p{margin:5px 0 0;font-size:13px;color:var(--muted)}
   .card-body{padding:18px 24px 26px}
+  h1 .nw{white-space:nowrap}
   @media(max-width:480px){
+    .members{gap:7px}
+    .m{font-size:12.3px;padding:6px 12px}
     .btn-row{gap:9px}
     .btn-row .btn{width:100%}
   }
@@ -229,6 +232,11 @@
   #toast.err{background:linear-gradient(180deg,#FF7178,#E0333C);color:#fff}
 
   @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  @media(max-width:640px){
+    table{min-width:0;font-size:12.2px}
+    th,td{padding:9px 9px}
+    td:first-child{white-space:normal}
+  }
   @media print{.top{background:#fff;color:#000}#toast{display:none}}
 </style>
 </head>
@@ -242,7 +250,7 @@
       <span class="live"><span class="dot"></span>TEAM WORKSPACE</span>
     </div>
 
-    <h1>꿈잇다 <span class="gold">최강본부</span><span class="sep">·</span>5인 팀 공용 작업실</h1>
+    <h1>꿈잇다 <span class="gold">최강본부</span><span class="sep">·</span><span class="nw">5인 팀 공용 작업실</span></h1>
     <p class="sub">한 페이지에서 세팅부터 발행·점검까지. 내 피클에 지침을 붙여넣고, 공용 배너로 신청 폼을 연결하고, 오늘 할 일을 체크하세요.</p>
 
     <div class="members">
