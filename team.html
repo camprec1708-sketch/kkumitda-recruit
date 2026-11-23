@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>꿈잇다 최강본부 · 5인 팀 공용 작업실</title>
+<meta name="description" content="꿈잇다 최강본부 5인 팀 공용 작업실 — 피클 세팅 지침 원클릭 복사, 공용 전환 폼·배너 다운로드, 오늘의 팀 작업 체크리스트.">
+<meta name="robots" content="noindex,follow">
+<meta name="author" content="꿈잇다 최강본부">
+<meta name="theme-color" content="#0A1826">
+<link rel="icon" type="image/png" href="kkumitda-symbol.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#060F18;
+    --navy-900:#0A1826;
+    --navy-850:#0D2032;
+    --navy-800:#112A40;
+    --navy-750:#173550;
+    --gold:#E6CC93;
+    --gold-2:#C9A227;
+    --gold-deep:#8C6B14;
+    --gold-pale:#F6EBD2;
+    --ink:#EEF3F7;
+    --muted:#9DB0C2;
+    --line:rgba(230,204,147,.20);
+    --red:#ff0010;
+    --font:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans CJK KR",system-ui,-apple-system,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;font-family:var(--font);color:var(--ink);line-height:1.65;
+    background:
+      radial-gradient(900px 520px at 12% -8%, rgba(201,162,39,.16), transparent 62%),
+      radial-gradient(760px 520px at 92% 4%, rgba(46,104,150,.26), transparent 60%),
+      linear-gradient(180deg,#0B1A29 0%,#081422 46%,#060F18 100%);
+    background-attachment:fixed;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--gold)}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+  /* ---------- header ---------- */
+  .top{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(620px 300px at 88% -20%, rgba(201,162,39,.20), transparent 70%),
+      linear-gradient(160deg,#102438 0%,#0A1826 62%,#08131F 100%);}
+  .top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(230,204,147,.7),transparent)}
+  .top-in{max-width:1040px;margin:0 auto;padding:34px 20px 30px}
+  .brandbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .symbol{width:34px;height:34px;border-radius:9px;flex:none;
+    background:linear-gradient(150deg,#1B3A57,#0C1E2E);border:1px solid var(--line);
+    display:grid;place-items:center;color:var(--gold);font-weight:900;font-size:14px;letter-spacing:.02em}
+  .brandtxt{font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--gold);text-transform:uppercase}
+  .live{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;
+    color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:rgba(230,204,147,.05)}
+  .live .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(230,204,147,.18)}
+
+  h1{margin:18px 0 10px;font-size:clamp(23px,4.6vw,34px);line-height:1.3;font-weight:900;letter-spacing:-.02em}
+  h1 .gold{background:linear-gradient(96deg,#F6EBD2,#E6CC93 42%,#C9A227);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h1 .sep{color:rgba(230,204,147,.45);font-weight:400;margin:0 .28em}
+  .sub{margin:0;color:var(--muted);font-size:14px;max-width:62ch}
+
+  .members{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .m{display:inline-flex;align-items:center;gap:8px;padding:6px 13px 6px 7px;border-radius:999px;
+    background:linear-gradient(160deg,rgba(23,53,80,.9),rgba(13,32,50,.9));border:1px solid var(--line);
+    font-size:13px;font-weight:700;color:#F2F6FA}
+  .m .n{width:21px;height:21px;border-radius:50%;display:grid;place-items:center;flex:none;
+    background:linear-gradient(150deg,#F1DFB3,#C9A227);color:#20180A;font-size:11px;font-weight:900}
+  .m.lead{border-color:rgba(230,204,147,.55);box-shadow:0 0 0 1px rgba(230,204,147,.12) inset}
+  .m .tag{font-size:10px;font-weight:800;letter-spacing:.06em;color:var(--gold-deep);background:var(--gold-pale);
+    border-radius:4px;padding:1px 5px;text-transform:uppercase}
+
+  .anchors{display:flex;gap:8px;margin-top:22px;overflow-x:auto;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .anchors::-webkit-scrollbar{display:none}
+  .anchors a{flex:none;font-size:12.5px;font-weight:700;color:#CFE0EE;text-decoration:none;
+    padding:7px 14px;border-radius:999px;border:1px solid rgba(230,204,147,.22);background:rgba(255,255,255,.03)}
+  .anchors a:hover{color:var(--gold);border-color:rgba(230,204,147,.5)}
+
+  /* ---------- sections ---------- */
+  section{margin-top:34px;scroll-margin-top:18px}
+  .card{position:relative;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    background:linear-gradient(165deg,rgba(17,42,64,.92),rgba(10,24,38,.96));
+    box-shadow:0 18px 40px -28px rgba(0,0,0,.9)}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,rgba(230,204,147,0),rgba(230,204,147,.85),rgba(230,204,147,0))}
+  .card-head{display:flex;align-items:flex-start;gap:14px;padding:24px 24px 0}
+  .num{flex:none;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
+    font-size:12.5px;font-weight:900;color:#20180A;background:linear-gradient(150deg,#F1DFB3,#C9A227);
+    box-shadow:0 4px 14px -6px rgba(201,162,39,.8)}
+  .card-head h2{margin:0;font-size:clamp(17px,2.9vw,20.5px);font-weight:900;letter-spacing:-.01em;line-height:1.4}
+  .card-head p{margin:5px 0 0;font-size:13px;color:var(--muted)}
+  .card-body{padding:18px 24px 26px}
+  @media(max-width:640px){
+    .card-head{padding:20px 18px 0;gap:11px}
+    .card-body{padding:16px 18px 22px}
+    .wrap{padding:0 14px 56px}
+    .top-in{padding:26px 16px 24px}
+  }
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-family:inherit;font-size:14px;font-weight:800;letter-spacing:-.01em;line-height:1.2;
+    padding:14px 20px;border-radius:12px;border:1px solid transparent;cursor:pointer;
+    text-decoration:none;transition:transform .12s ease,box-shadow .18s ease,background .18s ease;
+    -webkit-tap-highlight-color:transparent;min-height:48px}
+  .btn:active{transform:translateY(1px)}
+  .btn-gold{background:linear-gradient(180deg,#F7E9C8 0%,#E6CC93 46%,#C9A227 100%);
+    color:#1C1608;box-shadow:0 12px 26px -14px rgba(201,162,39,.95),0 1px 0 rgba(255,255,255,.5) inset}
+  .btn-gold:hover{box-shadow:0 16px 32px -14px rgba(201,162,39,1),0 1px 0 rgba(255,255,255,.6) inset}
+  .btn-ghost{background:rgba(255,255,255,.04);border-color:rgba(230,204,147,.38);color:var(--gold-pale)}
+  .btn-ghost:hover{background:rgba(230,204,147,.12);border-color:rgba(230,204,147,.7);color:#fff}
+  .btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .btn svg{width:17px;height:17px;flex:none}
+
+  /* ---------- package ---------- */
+  .pkg-note{display:flex;gap:11px;padding:14px 16px;border-radius:12px;margin-bottom:16px;
+    background:linear-gradient(120deg,rgba(201,162,39,.14),rgba(201,162,39,.05));
+    border:1px solid rgba(230,204,147,.28);font-size:13px;color:#EBDDBC;line-height:1.6}
+  .pkg-note b{color:#fff}
+  .pkg-note .ico{flex:none;font-size:15px;line-height:1.4}
+
+  details.pkg{border:1px solid rgba(230,204,147,.22);border-radius:14px;background:rgba(6,15,24,.6);overflow:hidden}
+  details.pkg[open]{border-color:rgba(230,204,147,.4)}
+  details.pkg summary{cursor:pointer;list-style:none;padding:14px 16px;display:flex;align-items:center;gap:10px;
+    font-size:13.5px;font-weight:800;color:var(--gold-pale);background:rgba(255,255,255,.03)}
+  details.pkg summary::-webkit-details-marker{display:none}
+  details.pkg summary .arw{margin-left:auto;color:var(--gold);transition:transform .2s ease;font-size:11px}
+  details.pkg[open] summary .arw{transform:rotate(180deg)}
+  details.pkg summary .cnt{font-size:11px;font-weight:700;color:var(--muted)}
+
+  .pkg-body{
+    margin:0;padding:20px 18px 22px;max-height:430px;overflow:auto;
+    font-family:var(--font);font-size:13.5px;line-height:1.85;color:#D8E4EE;
+    white-space:pre-wrap;word-break:keep-all;overflow-wrap:anywhere;
+    -webkit-user-select:text;user-select:text;background:#060F18;
+    border-top:1px solid rgba(230,204,147,.16)
+  }
+  .pkg-body::-webkit-scrollbar{width:9px}
+  .pkg-body::-webkit-scrollbar-thumb{background:rgba(230,204,147,.28);border-radius:9px}
+  .pkg-body::-webkit-scrollbar-track{background:transparent}
+
+  /* ---------- form / banner ---------- */
+  .form-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:760px){.form-grid{grid-template-columns:1.05fr .95fr;gap:20px;align-items:start}}
+  .linkcard{border:1px solid rgba(230,204,147,.24);border-radius:14px;padding:18px;
+    background:linear-gradient(160deg,rgba(23,53,80,.65),rgba(10,24,38,.8))}
+  .linkcard .lbl{font-size:11px;font-weight:800;letter-spacing:.13em;color:var(--gold);text-transform:uppercase}
+  .linkcard .title{font-size:15.5px;font-weight:800;margin:7px 0 4px;color:#fff}
+  .linkcard .desc{font-size:12.5px;color:var(--muted);margin:0 0 14px}
+  .urlbox{display:flex;align-items:center;gap:8px;background:#060F18;border:1px solid rgba(230,204,147,.22);
+    border-radius:10px;padding:9px 12px;margin-bottom:4px}
+  .urlbox code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;color:var(--gold-pale);
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+
+  .banner-card{border:1px solid rgba(230,204,147,.24);border-radius:14px;padding:14px;
+    background:linear-gradient(160deg,rgba(23,53,80,.5),rgba(10,24,38,.8))}
+  .banner-card img{display:block;width:100%;height:auto;border-radius:9px;border:1px solid rgba(255,255,255,.08)}
+  .banner-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;flex-wrap:wrap}
+  .banner-meta span{font-size:11.5px;color:var(--muted)}
+
+  /* ---------- checklist ---------- */
+  .progress{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .bar{flex:1;height:7px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden}
+  .bar i{display:block;height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,#C9A227,#F1DFB3);transition:width .3s ease}
+  .progress .cnt{font-size:12.5px;font-weight:800;color:var(--gold-pale);flex:none}
+  .progress .date{font-size:11.5px;color:var(--muted);flex:none}
+
+  ul.check{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  ul.check li{display:flex;align-items:flex-start;gap:12px;padding:13px 14px;border-radius:12px;
+    background:rgba(255,255,255,.028);border:1px solid rgba(255,255,255,.07);transition:background .15s,border-color .15s}
+  ul.check li:hover{background:rgba(255,255,255,.05)}
+  ul.check li.done{background:rgba(201,162,39,.10);border-color:rgba(230,204,147,.34)}
+  ul.check li.done .ct{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(230,204,147,.6)}
+  ul.check input{position:absolute;opacity:0;width:1px;height:1px}
+  ul.check label{display:flex;align-items:flex-start;gap:12px;cursor:pointer;width:100%;
+    font-size:13.8px;line-height:1.6;color:#E4EDF5;font-weight:600}
+  .box{flex:none;width:22px;height:22px;border-radius:7px;margin-top:1px;
+    border:1.6px solid rgba(230,204,147,.5);display:grid;place-items:center;transition:all .15s ease;background:rgba(6,15,24,.5)}
+  .box svg{width:13px;height:13px;opacity:0;transform:scale(.6);transition:all .15s ease;color:#20180A}
+  input:checked + label .box{background:linear-gradient(150deg,#F1DFB3,#C9A227);border-color:#E6CC93}
+  input:checked + label .box svg{opacity:1;transform:scale(1)}
+  .ct .time{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.04em;color:var(--gold);
+    margin-right:7px;font-variant-numeric:tabular-nums}
+  .ct em{display:block;font-style:normal;font-size:12px;color:var(--muted);font-weight:500;margin-top:3px;line-height:1.55}
+  li.done .ct em{color:rgba(157,176,194,.75)}
+
+  .reset{margin-top:14px;font-size:12px;font-weight:700;color:var(--muted);background:none;border:none;
+    cursor:pointer;padding:6px 0;font-family:inherit;text-decoration:underline;text-underline-offset:3px}
+  .reset:hover{color:var(--gold)}
+
+  /* ---------- table ---------- */
+  .tbl-wrap{margin-top:22px;border:1px solid rgba(230,204,147,.22);border-radius:14px;overflow:hidden;background:rgba(6,15,24,.45)}
+  .tbl-head{display:flex;align-items:center;gap:9px;padding:12px 16px;background:rgba(201,162,39,.10);
+    border-bottom:1px solid rgba(230,204,147,.22);font-size:12.5px;font-weight:900;color:var(--gold-pale);letter-spacing:.02em}
+  .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table{width:100%;border-collapse:collapse;font-size:12.8px;min-width:520px}
+  th,td{text-align:left;padding:11px 14px;vertical-align:top;border-bottom:1px solid rgba(255,255,255,.06)}
+  th{font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;
+    background:rgba(255,255,255,.025);white-space:nowrap}
+  tbody tr:last-child td{border-bottom:none}
+  td:first-child{color:#F2F6FA;font-weight:800;white-space:nowrap}
+  td.no{color:#FFB3B8}
+  td.yes{color:#CFE6C4}
+  .badge-no{display:inline-block;font-size:11px;font-weight:900;color:#FFC2C6;background:rgba(255,0,16,.14);
+    border:1px solid rgba(255,0,16,.35);border-radius:5px;padding:0 5px;margin-right:4px}
+  .badge-ok{display:inline-block;font-size:11px;font-weight:900;color:#D7EBC9;background:rgba(120,190,90,.14);
+    border:1px solid rgba(120,190,90,.35);border-radius:5px;padding:0 5px;margin-right:4px}
+
+  /* ---------- footer / toast ---------- */
+  footer{margin-top:40px;padding-top:22px;border-top:1px solid rgba(230,204,147,.16);
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;
+    font-size:12px;color:var(--muted)}
+  footer a{color:var(--gold);text-decoration:none}
+
+  #toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,18px);opacity:0;pointer-events:none;
+    z-index:99;padding:13px 20px;border-radius:999px;font-size:13.5px;font-weight:800;
+    background:linear-gradient(180deg,#F7E9C8,#E6CC93);color:#1C1608;
+    box-shadow:0 18px 40px -14px rgba(0,0,0,.8);transition:all .25s cubic-bezier(.2,.8,.3,1);max-width:calc(100vw - 32px);text-align:center}
+  #toast.show{opacity:1;transform:translate(-50%,0)}
+  #toast.err{background:linear-gradient(180deg,#FF7178,#E0333C);color:#fff}
+
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  @media print{.top{background:#fff;color:#000}#toast{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="brandbar">
+      <span class="symbol">꿈</span>
+      <span class="brandtxt">꿈잇다 최강본부</span>
+      <span class="live"><span class="dot"></span>TEAM WORKSPACE</span>
+    </div>
+
+    <h1>꿈잇다 <span class="gold">최강본부</span><span class="sep">·</span>5인 팀 공용 작업실</h1>
+    <p class="sub">한 페이지에서 세팅부터 발행·점검까지. 내 피클에 지침을 붙여넣고, 공용 배너로 신청 폼을 연결하고, 오늘 할 일을 체크하세요.</p>
+
+    <div class="members">
+      <span class="m lead"><span class="n">1</span>김민재</span>
+      <span class="m"><span class="n">2</span>김시은</span>
+      <span class="m"><span class="n">3</span>김외경</span>
+      <span class="m"><span class="n">4</span>데니</span>
+      <span class="m"><span class="n">5</span>송정한</span>
+    </div>
+
+    <nav class="anchors" aria-label="페이지 바로가기">
+      <a href="#pkg">피클 세팅 패키지</a>
+      <a href="#form">전환 폼 · 배너</a>
+      <a href="#check">오늘의 체크리스트</a>
+      <a href="#rules">금칙어 · 규격표</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ 1. 피클 세팅 패키지 ============ -->
+  <section id="pkg">
+    <div class="card">
+      <div class="card-head">
+        <span class="num">01</span>
+        <div>
+          <h2>원클릭 복붙 피클 세팅 패키지</h2>
+          <p>내 피클(AI 비서) 채팅창에 붙여넣으면 블로그·숏폼·폼 로직이 그대로 세팅됩니다.</p>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <div class="pkg-note">
+          <span class="ico">📋</span>
+          <div><b>사용법 3단계</b> — ① 아래 <b>복사하기</b> 버튼을 누릅니다. ② 내 피클 채팅창을 열어 그대로 붙여넣습니다. ③ 피클이 <b>“세팅 완료”</b>라고 답하면 끝입니다. 같은 내용을 5명이 각자 한 번만 하면 됩니다.</div>
+        </div>
+
+        <div class="btn-row" style="margin-top:0;margin-bottom:14px">
+          <button type="button" class="btn btn-gold" id="copyPkg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M6 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1"/></svg>
+            피클 세팅 지침 복사하기
+          </button>
+          <button type="button" class="btn btn-ghost" id="sharePkg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+            공유하기
+          </button>
+        </div>
+
+        <details class="pkg">
+          <summary>
+            <span>지침 전문 펼쳐보기</span>
+            <span class="cnt" id="pkgCount"></span>
+            <span class="arw">▼</span>
+          </summary>
+          <div class="pkg-body" id="pkgBody" tabindex="0" role="region" aria-label="피클 세팅 지침 전문"></div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. 전환 폼 & 배너 ============ -->
+  <section id="form">
+    <div class="card">
+      <div class="card-head">
+        <span class="num">02</span>
+        <div>
+          <h2>공용 전환 폼 &amp; 배너 다운로드</h2>
+          <p>모든 글·영상의 마지막은 이 배너와 이 신청 폼으로 통일합니다.</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="form-grid">
+
+          <div class="linkcard">
+            <div class="lbl">Partner · Application</div>
+            <div class="title">꿈잇다GA 최강본부 파트너·부업 간편 신청</div>
+            <p class="desc">30초 신청 · 팀 전원이 같은 폼으로 모객합니다.</p>
+            <div class="urlbox"><code id="formUrl">https://naver.me/5hoX9h7I</code></div>
+            <div class="btn-row">
+              <a class="btn btn-gold" href="https://naver.me/5hoX9h7I" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/></svg>
+                신청 폼 바로가기
+              </a>
+              <button type="button" class="btn btn-ghost" id="copyUrl">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M6 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1"/></svg>
+                링크 복사
+              </button>
+            </div>
+          </div>
+
+          <div class="banner-card">
+            <a href="assets/btn_njob_form.jpg" target="_blank" rel="noopener">
+              <img src="assets/btn_njob_form.jpg" alt="'N잡은 필수!' 꿈잇다 최강본부 간편 신청 배너" loading="lazy" width="620" height="160">
+            </a>
+            <div class="banner-meta">
+              <span>공용 배너 · JPG · 620×160</span>
+              <a class="btn btn-ghost" style="padding:10px 15px;min-height:42px;font-size:13px" href="assets/btn_njob_form.jpg" download="꿈잇다_최강본부_N잡은필수_배너.jpg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+                배너 이미지 다운로드
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pkg-note" style="margin:18px 0 0">
+          <span class="ico">🔗</span>
+          <div><b>링크 거는 법</b> — 본문에 주소를 글자로 쓰지 않습니다. 배너 이미지를 넣고 이미지에 위 신청 링크를 걸면 됩니다. 이미지는 <b>24.5KB 이하 JPG</b>만 사용하세요(33KB 이상은 업로드 실패).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. 체크리스트 ============ -->
+  <section id="check">
+    <div class="card">
+      <div class="card-head">
+        <span class="num">03</span>
+        <div>
+          <h2>오늘의 팀 작업 체크리스트</h2>
+          <p>모바일에서 보며 체크하세요. 체크 상태는 이 브라우저에 저장되고, 날짜가 바뀌면 새로 시작합니다.</p>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <div class="progress">
+          <span class="date" id="todayLabel">오늘</span>
+          <div class="bar"><i id="bar"></i></div>
+          <span class="cnt" id="progCnt">0 / 5</span>
+        </div>
+
+        <ul class="check" id="checkList">
+          <li>
+            <input type="checkbox" id="c1" data-k="c1">
+            <label for="c1"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span>
+              <span class="ct"><span class="time">SETUP</span>내 피클에 팀 세팅 지침 붙여넣고 “세팅 완료” 확인<em>01번 패키지 → 복사하기 → 내 피클 채팅창에 붙여넣기 (팀원 5명 각 1회)</em></span>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="c2" data-k="c2">
+            <label for="c2"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span>
+              <span class="ct"><span class="time">10:30</span>순수 정보 글 1건 발행<em>생활·건강·여행 등 · 광고 링크 0건 · 태그 6~8개 · 가격·상담번호 없음</em></span>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="c3" data-k="c3">
+            <label for="c3"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span>
+              <span class="ct"><span class="time">12:30</span>이웃 소통 (21:30 한 번 더)<em>내 블로그 새 댓글·안부 답글 먼저 → 다른 블로그 방문·공감·맞춤 댓글</em></span>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="c4" data-k="c4">
+            <label for="c4"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span>
+              <span class="ct"><span class="time">14:30</span>제휴·홍보 글 1건 + 하단 배너 링크<em>금칙어 0건 확인 · ‘N잡은 필수!’ 배너에 신청 링크 연결</em></span>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="c5" data-k="c5">
+            <label for="c5"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span>
+              <span class="ct"><span class="time">영상</span>클립·쇼츠·틱톡 3곳 동시 업로드 → 23:00 4채널 점검<em>영상에 ‘김도하’ 절대 금지 · 1초 훅·빠른 컷·강한 비트·큰 자막 · 조회수 보고 제목·태그·공개범위 보완</em></span>
+            </label>
+          </li>
+        </ul>
+
+        <button type="button" class="reset" id="resetBtn">오늘 체크 모두 지우기</button>
+
+        <!-- 규격표 -->
+        <div class="tbl-wrap" id="rules">
+          <div class="tbl-head">⚡ 금칙어 · 규격 빠른 요약표</div>
+          <div class="tbl-scroll">
+            <table>
+              <thead>
+                <tr><th>항목</th><th>기준</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>금칙어</td>
+                  <td><span class="badge-no">금지</span>상조 · 장례 · 납입금 · 회차<br>→ 여행 · 가전 · 건강 이야기로 풀어 씁니다.</td>
+                </tr>
+                <tr>
+                  <td>콜렌 가격</td>
+                  <td><span class="badge-no">금지</span>할인가 숫자 그대로 노출<br><span class="badge-ok">표기</span>“정상가격 · 국내 최대할인가격 · 상담사 문의”</td>
+                </tr>
+                <tr>
+                  <td>김도하 이사</td>
+                  <td><span class="badge-ok">블로그</span>표기 OK (해시태그 <code>#김도하이사</code> 선두)<br><span class="badge-no">영상</span>클립 · 쇼츠 · 틱톡 — 절대 넣지 않음</td>
+                </tr>
+                <tr>
+                  <td>표현 교체</td>
+                  <td>“공식 인정 판매본부” · “분급시대” · “이번 주 실적 이번 주 지급” <span class="badge-no">금지</span><br>→ “완전판매로 끝난 건을 주 단위로 정산” · “강제 교육·의무 출석 없음” · “대면영업·TM·온라인 통합 시스템”</td>
+                </tr>
+                <tr>
+                  <td>제목</td>
+                  <td>20~26자 · <b>28자 초과 금지</b> · 핵심 키워드를 맨 앞에</td>
+                </tr>
+                <tr>
+                  <td>본문 서식</td>
+                  <td>바른히피 · 19px · 줄간격 190% · 1~2줄 짧은 호흡</td>
+                </tr>
+                <tr>
+                  <td>핵심 강조</td>
+                  <td><b style="color:#ff0010">24px · 빨강 #ff0010 · 굵게</b> (도입·중간·마무리 3회 이상) + 포스트잇 인용구</td>
+                </tr>
+                <tr>
+                  <td>이미지</td>
+                  <td>24.5KB 이하 JPG · 가로 410~700px (33KB 이상 업로드 실패)</td>
+                </tr>
+                <tr>
+                  <td>태그</td>
+                  <td>10~13개 · 순수 정보 글은 6~8개</td>
+                </tr>
+                <tr>
+                  <td>URL</td>
+                  <td><span class="badge-no">금지</span>본문에 주소 글자 노출 → <span class="badge-ok">방법</span>이미지에 링크 걸기</td>
+                </tr>
+                <tr>
+                  <td>영상</td>
+                  <td>3곳 동시(클립·쇼츠·틱톡) · 1초 훅 · 빠른 컷 · 강한 비트 · 한국어 내레이션 · 큰 자막<br>질병 치료·완치 단정 금지 → “심부열 · 체온관리 · 면역관리”</td>
+                </tr>
+                <tr>
+                  <td>상담 문구</td>
+                  <td>사업·특판 글 하단 “이웃추가 · 구매상담 010.8065.1708”</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>꿈잇다 최강본부 · 5인 팀 공용 작업실 — 김민재 · 김시은 · 김외경 · 데니 · 송정한</span>
+    <span><a href="./">사업자 모집 안내 페이지 →</a></span>
+  </footer>
+</main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script type="text/plain" id="pickleSrc">[꿈잇다 최강본부 · 5인 팀 공통 업무 지침]
+
+나는 꿈잇다 최강본부 5인 팀의 팀원입니다.
+아래 내용은 앞으로 내 블로그·영상·상담 폼 업무를 네가 처리할 때의 기준입니다.
+지금부터 이 기준을 내 업무 규칙으로 기억해 두고, 내가 "블로그 글 써줘", "영상 올려"라고 하면 이 규칙대로 바로 실행해 주세요.
+
+■ 1. 내가 하는 일
+1) 네이버 블로그에 하루 2건 — 순수 정보 글 1건, 제휴·홍보 글 1건.
+2) 클립·유튜브 쇼츠·틱톡에 같은 영상을 3곳 동시에 올립니다.
+3) 모든 글과 영상의 마지막은 'N잡은 필수!' 배너와 간편 신청 폼으로 연결합니다.
+
+■ 2. 블로그 글쓰기 규칙 (반드시 지킬 것)
+· 검색 노출 3가지를 항상 함께 적용합니다.
+  - 검색(SEO): 핵심 키워드를 제목 맨 앞에 두고, 태그는 10~13개(순수 정보 글은 6~8개).
+  - 질문 답변(AEO): 소제목을 질문 형태로 쓰고, 바로 아래 1~2줄에 답부터 씁니다.
+  - 브랜드·수치(GEO): 브랜드명·제품명·숫자·자주 묻는 질문 2~3개를 본문에 구조적으로 넣습니다.
+· 제목은 20~26자로 씁니다. 28자를 넘기면 모바일에서 잘리므로 절대 넘기지 않습니다.
+· 수다는 금지입니다. 인사말·서론·잡담을 빼고 첫 줄을 훅으로 시작합니다.
+  예: "겨울마다 전기요금 폭탄, 이유는 이거였습니다."
+· 문장은 1~2줄마다 줄을 바꿔 짧게 끊고, 한 문단은 2~3줄을 넘기지 않습니다.
+· 글꼴은 '바른히피', 본문 19px, 줄간격 190%로 맞춥니다.
+· 핵심 문구·혜택·가격·연락처는 24px 빨강(#ff0010) 굵게로 강조합니다. (도입·중간·마무리 3회 이상)
+· 중요한 문장은 포스트잇 인용구로 한 번 더 묶어 줍니다.
+· 본문에 주소(URL)를 글자로 노출하지 않습니다. 링크는 이미지에 걸어 줍니다.
+· 링크를 거는 이미지는 24.5KB 이하 JPEG, 가로 410~700px만 사용합니다. 33KB를 넘으면 업로드가 실패합니다.
+· 사업·특판 글 하단에는 "이웃추가 · 구매상담 010.8065.1708"을 넣습니다.
+
+■ 3. 매일 업무 시간표
+· 10:30 — 순수 정보 글 1건 (생활·건강·여행 등, 광고 링크 0건)
+· 12:30 — 이웃 소통 (내 블로그 새 댓글·안부 답글 먼저 → 다른 블로그 방문·공감·맞춤 댓글)
+· 14:30 — 제휴·홍보 글 1건 (제품·서비스 소개와 신청 안내)
+· 21:30 — 이웃 소통 한 번 더
+· 23:00 — 조회수·검색 노출 점검 (블로그·클립·쇼츠·틱톡 4곳) → 제목·태그·공개범위 보완
+
+■ 4. 절대 쓰면 안 되는 말 (금칙어)
+· 상조, 장례, 납입금, 회차 — 이 4개 단어는 어떤 글에도 쓰지 않습니다. 여행·가전·건강 이야기로 풀어냅니다.
+· 콜렌 제품은 할인가격을 숫자로 노출하지 않습니다. "정상가격 · 국내 최대할인가격 · 상담사 문의" 이렇게만 씁니다.
+· "공식 인정 판매본부", "분급시대", "이번 주 실적 이번 주 지급"은 쓰지 않습니다.
+  대신 "완전판매로 끝난 건을 주 단위로 정산", "강제 교육·의무 출석 없음", "대면영업·TM·온라인 통합 시스템"으로 씁니다.
+· '김도하 이사' 표기는 블로그 글에만 씁니다. 클립·쇼츠·틱톡 등 모든 영상에는 절대 넣지 않습니다.
+
+■ 5. 영상 규칙 (클립·유튜브 쇼츠·틱톡 3곳 동시)
+· "영상 올려"라고 하면 3곳에 같은 영상을 모두 올립니다.
+· 첫 1초에 훅 — 가장 강한 장면과 문장을 맨 앞에 둡니다.
+· 빠른 컷 전환, 묵직하고 강한 비트의 배경음악, 한국어 내레이션, 화면을 꽉 채우는 큰 자막.
+· 제목은 호기심과 키워드를 앞에 두고, 전화번호·광고 문구는 뒤로 뺍니다.
+· 질병 치료·완치를 단정하는 표현은 금지합니다. "심부열", "체온관리", "면역관리" 같은 안전한 표현으로 씁니다.
+· 영상 제목·자막·설명 어디에도 '김도하'는 넣지 않습니다.
+
+■ 6. 전환 폼 (모든 글·영상의 마지막)
+· 하단에 'N잡은 필수!' 배너를 넣고 https://naver.me/5hoX9h7I 로 연결합니다.
+  (꿈잇다GA 최강본부 파트너·부업 간편 신청, 30초)
+· 배너 이미지는 팀 공용 작업실에서 다운로드해 사용합니다.
+· 본문에 링크 주소를 글자로 쓰지 않고, 배너 이미지에 링크를 겁니다.
+
+■ 7. 확인
+위 기준으로 세팅을 마치면 "세팅 완료"라고 짧게 알려 주세요.
+그다음부터는 내가 시키지 않아도 매일 시간표대로 먼저 챙겨 주세요.</script>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- toast ---------- */
+  var toastEl = document.getElementById('toast');
+  var toastTimer = null;
+  function toast(msg, isErr){
+    toastEl.textContent = msg;
+    toastEl.className = isErr ? 'show err' : 'show';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.className = isErr ? 'err' : ''; }, 2400);
+  }
+
+  /* ---------- copy helper ---------- */
+  function legacyCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly','');
+    ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch(e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).then(function(){ return true; })
+        .catch(function(){ return legacyCopy(text); });
+    }
+    return Promise.resolve(legacyCopy(text));
+  }
+
+  /* ---------- package text ---------- */
+  var raw = document.getElementById('pickleSrc').textContent;
+  var pkgText = raw.replace(/^\s+|\s+$/g, '') + '\n';
+  var pkgBody = document.getElementById('pkgBody');
+  pkgBody.textContent = pkgText;
+  document.getElementById('pkgCount').textContent = '약 ' + pkgText.replace(/\s/g,'').length.toLocaleString('ko-KR') + '자';
+
+  var copyPkgBtn = document.getElementById('copyPkg');
+  copyPkgBtn.addEventListener('click', function(){
+    copyText(pkgText).then(function(ok){
+      if (ok) {
+        toast('✅ 세팅 지침 복사 완료 — 피클 채팅창에 붙여넣으세요');
+        copyPkgBtn.focus();
+      } else {
+        document.querySelector('details.pkg').open = true;
+        var r = document.createRange(); r.selectNodeContents(pkgBody);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        toast('복사가 막혔어요. 지침 전문이 선택되었으니 길게 눌러 복사해 주세요', true);
+      }
+    });
+  });
+
+  var shareBtn = document.getElementById('sharePkg');
+  if (navigator.share) {
+    shareBtn.addEventListener('click', function(){
+      navigator.share({
+        title: '꿈잇다 최강본부 · 5인 팀 공용 작업실',
+        text: pkgText
+      }).catch(function(){});
+    });
+  } else {
+    shareBtn.style.display = 'none';
+  }
+
+  /* ---------- link copy ---------- */
+  var FORM_URL = 'https://naver.me/5hoX9h7I';
+  document.getElementById('copyUrl').addEventListener('click', function(){
+    copyText(FORM_URL).then(function(ok){
+      toast(ok ? '✅ 신청 폼 링크 복사 완료' : '복사가 막혔어요. 주소를 길게 눌러 복사해 주세요', !ok);
+    });
+  });
+
+  /* ---------- checklist ---------- */
+  function todayKey(){
+    var d = new Date();
+    return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  }
+  var KEY = 'kgb5-team-list-' + todayKey();
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#checkList input[type=checkbox]'));
+  var bar = document.getElementById('bar');
+  var progCnt = document.getElementById('progCnt');
+
+  var dl = document.getElementById('todayLabel');
+  var now = new Date();
+  var wd = ['일','월','화','수','목','금','토'][now.getDay()];
+  dl.textContent = (now.getMonth()+1) + '/' + now.getDate() + ' (' + wd + ')';
+
+  function read(){
+    try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ return {}; }
+  }
+  function save(state){
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){}
+  }
+  function paint(){
+    var done = 0;
+    boxes.forEach(function(b){
+      var li = b.closest('li');
+      if (b.checked) { li.classList.add('done'); done++; } else { li.classList.remove('done'); }
+    });
+    progCnt.textContent = done + ' / ' + boxes.length;
+    bar.style.width = Math.round(done / boxes.length * 100) + '%';
+  }
+
+  var state = read();
+  boxes.forEach(function(b){
+    b.checked = !!state[b.dataset.k];
+    b.addEventListener('change', function(){
+      state[b.dataset.k] = b.checked;
+      save(state);
+      paint();
+      if (boxes.every(function(x){ return x.checked; })) {
+        toast('🎉 오늘 5단계 모두 완료! 수고하셨어요');
+      }
+    });
+  });
+  paint();
+
+  document.getElementById('resetBtn').addEventListener('click', function(){
+    state = {};
+    save(state);
+    boxes.forEach(function(b){ b.checked = false; });
+    paint();
+    toast('오늘 체크를 모두 지웠습니다');
+  });
+
+  /* other-day keys cleanup (keep small) */
+  try {
+    for (var i = localStorage.length - 1; i >= 0; i--) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('kgb5-team-list-') === 0 && k !== KEY) localStorage.removeItem(k);
+    }
+  } catch(e){}
+})();
+</script>
+</body>
+</html>
