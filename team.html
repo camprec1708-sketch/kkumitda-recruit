@@ -33,6 +33,7 @@
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{
     margin:0;font-family:var(--font);color:var(--ink);line-height:1.65;
+    word-break:keep-all;overflow-wrap:break-word;
     background:
       radial-gradient(900px 520px at 12% -8%, rgba(201,162,39,.16), transparent 62%),
       radial-gradient(760px 520px at 92% 4%, rgba(46,104,150,.26), transparent 60%),
@@ -67,12 +68,9 @@
   .sub{margin:0;color:var(--muted);font-size:14px;max-width:62ch}
 
   .members{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-  .m{display:inline-flex;align-items:center;gap:8px;padding:6px 13px 6px 7px;border-radius:999px;
+  .m{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;
     background:linear-gradient(160deg,rgba(23,53,80,.9),rgba(13,32,50,.9));border:1px solid var(--line);
     font-size:13px;font-weight:700;color:#F2F6FA}
-  .m .n{width:21px;height:21px;border-radius:50%;display:grid;place-items:center;flex:none;
-    background:linear-gradient(150deg,#F1DFB3,#C9A227);color:#20180A;font-size:11px;font-weight:900}
-  .m.lead{border-color:rgba(230,204,147,.55);box-shadow:0 0 0 1px rgba(230,204,147,.12) inset}
   .m .tag{font-size:10px;font-weight:800;letter-spacing:.06em;color:var(--gold-deep);background:var(--gold-pale);
     border-radius:4px;padding:1px 5px;text-transform:uppercase}
 
@@ -96,6 +94,10 @@
   .card-head h2{margin:0;font-size:clamp(17px,2.9vw,20.5px);font-weight:900;letter-spacing:-.01em;line-height:1.4}
   .card-head p{margin:5px 0 0;font-size:13px;color:var(--muted)}
   .card-body{padding:18px 24px 26px}
+  @media(max-width:480px){
+    .btn-row{gap:9px}
+    .btn-row .btn{width:100%}
+  }
   @media(max-width:640px){
     .card-head{padding:20px 18px 0;gap:11px}
     .card-body{padding:16px 18px 22px}
@@ -244,11 +246,11 @@
     <p class="sub">한 페이지에서 세팅부터 발행·점검까지. 내 피클에 지침을 붙여넣고, 공용 배너로 신청 폼을 연결하고, 오늘 할 일을 체크하세요.</p>
 
     <div class="members">
-      <span class="m lead"><span class="n">1</span>김민재</span>
-      <span class="m"><span class="n">2</span>김시은</span>
-      <span class="m"><span class="n">3</span>김외경</span>
-      <span class="m"><span class="n">4</span>데니</span>
-      <span class="m"><span class="n">5</span>송정한</span>
+      <span class="m">김민재</span>
+      <span class="m">김시은</span>
+      <span class="m">김외경</span>
+      <span class="m">데니</span>
+      <span class="m">송정한</span>
     </div>
 
     <nav class="anchors" aria-label="페이지 바로가기">
