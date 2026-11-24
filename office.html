@@ -184,16 +184,12 @@
   .banner-card img{display:block;width:100%;height:auto;border-radius:9px;border:1px solid rgba(255,255,255,.08)}
   .banner-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;flex-wrap:wrap}
   .banner-meta span{font-size:11.5px;color:var(--muted)}
-  .thumb-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .thumb{border:1px solid rgba(230,204,147,.2);border-radius:12px;padding:11px;background:rgba(6,15,24,.5);
-    display:flex;flex-direction:column;gap:8px}
-  .thumb .im{height:74px;display:grid;place-items:center;background:#08131F;border-radius:8px;overflow:hidden;
-    border:1px solid rgba(255,255,255,.07)}
-  .thumb .im img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-  .thumb .nm{font-size:11.5px;font-weight:700;color:#DCE7F0;line-height:1.4}
-  .thumb .sz{font-size:10.5px;color:var(--muted)}
-  .thumb a.dl{font-size:11.5px;font-weight:800;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(230,204,147,.4);
-    align-self:flex-start;padding-bottom:1px}
+  .symbol-box{height:132px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.08);
+    border-radius:9px;background:radial-gradient(120% 120% at 50% 40%,#1B3A57 0%,#08131F 78%)}
+  .symbol-box img{width:88px;height:88px;display:block}
+  a.btn-gold:visited{color:#1C1608}
+  a.btn-ghost:visited{color:var(--gold-pale)}
+  footer a:visited{color:var(--gold)}
 
   /* ---------- flow ---------- */
   .flow{display:grid;grid-template-columns:1fr;gap:10px;margin:0;padding:0;list-style:none;counter-reset:step}
@@ -502,18 +498,14 @@
             </div>
           </div>
 
-          <div class="thumb-row">
-            <div class="thumb">
-              <div class="im"><img src="og-image.jpg" alt="최강본부 소개 카드 이미지" loading="lazy" width="1200" height="630"></div>
-              <div class="nm">소개 카드 이미지</div>
-              <div class="sz">JPG · 1200×630</div>
-              <a class="dl" href="og-image.jpg" download="꿈잇다_최강본부_소개카드.jpg">다운로드 →</a>
-            </div>
-            <div class="thumb">
-              <div class="im"><img src="kkumitda-symbol.png" alt="꿈잇다 심볼" loading="lazy" width="128" height="128"></div>
-              <div class="nm">꿈잇다 심볼</div>
-              <div class="sz">PNG · 128×128</div>
-              <a class="dl" href="kkumitda-symbol.png" download="꿈잇다_심볼.png">다운로드 →</a>
+          <div class="banner-card">
+            <div class="symbol-box"><img src="kkumitda-symbol.png" alt="꿈잇다 심볼" loading="lazy" width="128" height="128"></div>
+            <div class="banner-meta">
+              <span>꿈잇다 심볼 · PNG · 128×128 · 20KB</span>
+              <a class="btn btn-ghost btn-sm" href="kkumitda-symbol.png" download="꿈잇다_심볼.png">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+                심볼 다운로드
+              </a>
             </div>
           </div>
 
