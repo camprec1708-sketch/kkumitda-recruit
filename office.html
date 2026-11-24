@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>최강본부 김도하 이사 전용 오피스</title>
+<meta name="description" content="최강본부 김도하 이사 전용 오피스 — 박도현 · 김도하 이사 2인 AI 협업 워크스페이스. 두 피클 직통 연결, 원클릭 세팅 지침, 핵심 추진 링크와 실행 체크리스트.">
+<meta name="robots" content="noindex,follow">
+<meta name="author" content="꿈잇다 최강본부">
+<meta name="theme-color" content="#0A1826">
+<link rel="icon" type="image/png" href="kkumitda-symbol.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#060F18;
+    --navy-900:#0A1826;
+    --navy-850:#0D2032;
+    --navy-800:#112A40;
+    --navy-750:#173550;
+    --gold:#E6CC93;
+    --gold-2:#C9A227;
+    --gold-deep:#8C6B14;
+    --gold-pale:#F6EBD2;
+    --ink:#EEF3F7;
+    --muted:#9DB0C2;
+    --line:rgba(230,204,147,.20);
+    --font:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans CJK KR",system-ui,-apple-system,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;font-family:var(--font);color:var(--ink);line-height:1.65;
+    word-break:keep-all;overflow-wrap:break-word;
+    background:
+      radial-gradient(900px 520px at 12% -8%, rgba(201,162,39,.16), transparent 62%),
+      radial-gradient(760px 520px at 92% 4%, rgba(46,104,150,.26), transparent 60%),
+      linear-gradient(180deg,#0B1A29 0%,#081422 46%,#060F18 100%);
+    background-attachment:fixed;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--gold)}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+  /* ---------- header ---------- */
+  .top{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(620px 300px at 88% -20%, rgba(201,162,39,.20), transparent 70%),
+      linear-gradient(160deg,#102438 0%,#0A1826 62%,#08131F 100%);}
+  .top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(230,204,147,.7),transparent)}
+  .top-in{max-width:1040px;margin:0 auto;padding:34px 20px 30px}
+  .brandbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .symbol{width:34px;height:34px;border-radius:9px;flex:none;
+    background:linear-gradient(150deg,#1B3A57,#0C1E2E);border:1px solid var(--line);
+    display:grid;place-items:center;color:var(--gold);font-weight:900;font-size:14px;letter-spacing:.02em}
+  .brandtxt{font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--gold);text-transform:uppercase}
+  .live{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;
+    color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:rgba(230,204,147,.05)}
+  .live .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(230,204,147,.18)}
+
+  h1{margin:18px 0 10px;font-size:clamp(22px,4.4vw,33px);line-height:1.32;font-weight:900;letter-spacing:-.02em}
+  h1 .gold{background:linear-gradient(96deg,#F6EBD2,#E6CC93 42%,#C9A227);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h1 .sep{color:rgba(230,204,147,.45);font-weight:400;margin:0}
+  h1 .nw{white-space:nowrap}
+  .sub{margin:0;color:var(--muted);font-size:14px;max-width:64ch}
+
+  .members{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .m{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;
+    background:linear-gradient(160deg,rgba(23,53,80,.9),rgba(13,32,50,.9));border:1px solid var(--line);
+    font-size:13px;font-weight:700;color:#F2F6FA}
+  .m .tag{font-size:10px;font-weight:800;letter-spacing:.06em;color:var(--gold-deep);background:var(--gold-pale);
+    border-radius:4px;padding:1px 5px;text-transform:uppercase}
+  .m .hd{font-size:11.5px;font-weight:600;color:var(--muted)}
+
+  .linkline{display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+  .linkline b{color:var(--gold-pale);font-weight:800}
+
+  .anchors{display:flex;gap:8px;margin-top:20px;overflow-x:auto;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .anchors::-webkit-scrollbar{display:none}
+  .anchors a{flex:none;font-size:12.5px;font-weight:700;color:#CFE0EE;text-decoration:none;
+    padding:7px 14px;border-radius:999px;border:1px solid rgba(230,204,147,.22);background:rgba(255,255,255,.03)}
+  .anchors a:hover{color:var(--gold);border-color:rgba(230,204,147,.5)}
+
+  /* ---------- sections ---------- */
+  section{margin-top:34px;scroll-margin-top:18px}
+  .card{position:relative;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    background:linear-gradient(165deg,rgba(17,42,64,.92),rgba(10,24,38,.96));
+    box-shadow:0 18px 40px -28px rgba(0,0,0,.9)}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,rgba(230,204,147,0),rgba(230,204,147,.85),rgba(230,204,147,0))}
+  .card-head{display:flex;align-items:flex-start;gap:14px;padding:24px 24px 0}
+  .num{flex:none;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
+    font-size:12.5px;font-weight:900;color:#20180A;background:linear-gradient(150deg,#F1DFB3,#C9A227);
+    box-shadow:0 4px 14px -6px rgba(201,162,39,.8)}
+  .card-head h2{margin:0;font-size:clamp(17px,2.9vw,20.5px);font-weight:900;letter-spacing:-.01em;line-height:1.4}
+  .card-head p{margin:5px 0 0;font-size:13px;color:var(--muted)}
+  .card-body{padding:18px 24px 26px}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-family:inherit;font-size:14px;font-weight:800;letter-spacing:-.01em;line-height:1.2;
+    padding:14px 20px;border-radius:12px;border:1px solid transparent;cursor:pointer;
+    text-decoration:none;transition:transform .12s ease,box-shadow .18s ease,background .18s ease;
+    -webkit-tap-highlight-color:transparent;min-height:48px}
+  .btn:active{transform:translateY(1px)}
+  .btn-gold{background:linear-gradient(180deg,#F7E9C8 0%,#E6CC93 46%,#C9A227 100%);
+    color:#1C1608;box-shadow:0 12px 26px -14px rgba(201,162,39,.95),0 1px 0 rgba(255,255,255,.5) inset}
+  .btn-gold:hover{box-shadow:0 16px 32px -14px rgba(201,162,39,1),0 1px 0 rgba(255,255,255,.6) inset}
+  .btn-ghost{background:rgba(255,255,255,.04);border-color:rgba(230,204,147,.38);color:var(--gold-pale)}
+  .btn-ghost:hover{background:rgba(230,204,147,.12);border-color:rgba(230,204,147,.7);color:#fff}
+  .btn-sm{padding:10px 15px;min-height:42px;font-size:13px}
+  .btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .btn svg{width:17px;height:17px;flex:none}
+
+  /* ---------- notes ---------- */
+  .pkg-note{display:flex;gap:11px;padding:14px 16px;border-radius:12px;margin-bottom:16px;
+    background:linear-gradient(120deg,rgba(201,162,39,.14),rgba(201,162,39,.05));
+    border:1px solid rgba(230,204,147,.28);font-size:13px;color:#EBDDBC;line-height:1.6}
+  .pkg-note b{color:#fff}
+  .pkg-note .ico{flex:none;font-size:15px;line-height:1.4}
+  .pkg-note.tight{margin:0 0 14px}
+
+  .pair{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 16px;
+    padding:14px 16px;border:1px solid rgba(230,204,147,.26);border-radius:12px;background:rgba(6,15,24,.5)}
+  .pair .who{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:#F2F6FA}
+  .pair .who .av{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;flex:none;
+    font-size:11px;font-weight:900;color:#20180A;background:linear-gradient(150deg,#F1DFB3,#C9A227)}
+  .pair .who small{display:block;font-size:11px;font-weight:600;color:var(--muted)}
+  .pair .arrow{color:var(--gold);font-weight:900;letter-spacing:.06em;font-size:12px}
+
+  /* ---------- packages ---------- */
+  .pkg-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:880px){.pkg-grid{grid-template-columns:1fr 1fr;gap:18px;align-items:start}}
+  .pkg-card{border:1px solid rgba(230,204,147,.22);border-radius:14px;background:rgba(6,15,24,.55);overflow:hidden}
+  .pkg-card.primary{border-color:rgba(230,204,147,.45);background:linear-gradient(165deg,rgba(23,53,80,.75),rgba(8,19,31,.9))}
+  .pkg-card .pc-head{padding:16px 16px 0}
+  .pkg-card .pc-head .lbl{font-size:10.5px;font-weight:900;letter-spacing:.13em;color:var(--gold);text-transform:uppercase}
+  .pkg-card .pc-head h3{margin:6px 0 0;font-size:15.5px;font-weight:900;color:#fff;line-height:1.4}
+  .pkg-card .pc-head p{margin:5px 0 0;font-size:12.4px;color:var(--muted);line-height:1.55}
+  .pkg-card .pc-body{padding:14px 16px 16px}
+  .pkg-card .btn-row{margin-top:0}
+
+  details.pkg{border:1px solid rgba(230,204,147,.22);border-radius:12px;background:rgba(6,15,24,.6);overflow:hidden;margin-top:12px}
+  details.pkg[open]{border-color:rgba(230,204,147,.4)}
+  details.pkg summary{cursor:pointer;list-style:none;padding:12px 14px;display:flex;align-items:center;gap:9px;
+    font-size:13px;font-weight:800;color:var(--gold-pale);background:rgba(255,255,255,.03)}
+  details.pkg summary::-webkit-details-marker{display:none}
+  details.pkg summary .arw{margin-left:auto;color:var(--gold);transition:transform .2s ease;font-size:11px}
+  details.pkg[open] summary .arw{transform:rotate(180deg)}
+  details.pkg summary .cnt{font-size:11px;font-weight:700;color:var(--muted)}
+
+  .pkg-body{margin:0;padding:18px 16px 20px;max-height:400px;overflow:auto;
+    font-family:var(--font);font-size:13.2px;line-height:1.85;color:#D8E4EE;
+    white-space:pre-wrap;word-break:keep-all;overflow-wrap:anywhere;
+    -webkit-user-select:text;user-select:text;background:#060F18;
+    border-top:1px solid rgba(230,204,147,.16)}
+  .pkg-body::-webkit-scrollbar{width:9px}
+  .pkg-body::-webkit-scrollbar-thumb{background:rgba(230,204,147,.28);border-radius:9px}
+  .pkg-body::-webkit-scrollbar-track{background:transparent}
+
+  /* ---------- links ---------- */
+  .link-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:760px){.link-grid{grid-template-columns:1fr 1fr;gap:16px}}
+  .linkcard{border:1px solid rgba(230,204,147,.24);border-radius:14px;padding:17px;
+    background:linear-gradient(160deg,rgba(23,53,80,.65),rgba(10,24,38,.8))}
+  .linkcard .lbl{font-size:10.5px;font-weight:800;letter-spacing:.13em;color:var(--gold);text-transform:uppercase}
+  .linkcard .title{font-size:15px;font-weight:800;margin:7px 0 4px;color:#fff;line-height:1.4}
+  .linkcard .desc{font-size:12.4px;color:var(--muted);margin:0 0 12px;line-height:1.55}
+  .urlbox{display:flex;align-items:center;gap:8px;background:#060F18;border:1px solid rgba(230,204,147,.22);
+    border-radius:10px;padding:9px 12px;margin-bottom:2px}
+  .urlbox code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--gold-pale);
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+  .linkcard .btn-row{gap:8px;margin-top:11px}
+  .linkcard .btn{flex:1;min-width:120px}
+
+  .assets{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
+  @media(min-width:760px){.assets{grid-template-columns:1.15fr .85fr;gap:16px;align-items:start}}
+  .banner-card{border:1px solid rgba(230,204,147,.24);border-radius:14px;padding:14px;
+    background:linear-gradient(160deg,rgba(23,53,80,.5),rgba(10,24,38,.8))}
+  .banner-card img{display:block;width:100%;height:auto;border-radius:9px;border:1px solid rgba(255,255,255,.08)}
+  .banner-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;flex-wrap:wrap}
+  .banner-meta span{font-size:11.5px;color:var(--muted)}
+  .thumb-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .thumb{border:1px solid rgba(230,204,147,.2);border-radius:12px;padding:11px;background:rgba(6,15,24,.5);
+    display:flex;flex-direction:column;gap:8px}
+  .thumb .im{height:74px;display:grid;place-items:center;background:#08131F;border-radius:8px;overflow:hidden;
+    border:1px solid rgba(255,255,255,.07)}
+  .thumb .im img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+  .thumb .nm{font-size:11.5px;font-weight:700;color:#DCE7F0;line-height:1.4}
+  .thumb .sz{font-size:10.5px;color:var(--muted)}
+  .thumb a.dl{font-size:11.5px;font-weight:800;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(230,204,147,.4);
+    align-self:flex-start;padding-bottom:1px}
+
+  /* ---------- flow ---------- */
+  .flow{display:grid;grid-template-columns:1fr;gap:10px;margin:0;padding:0;list-style:none;counter-reset:step}
+  @media(min-width:700px){.flow{grid-template-columns:repeat(3,1fr)}}
+  .flow li{position:relative;border:1px solid rgba(230,204,147,.2);border-radius:12px;padding:13px 14px 13px 44px;
+    background:rgba(255,255,255,.028);font-size:13px;line-height:1.55;color:#E4EDF5}
+  .flow li::before{counter-increment:step;content:counter(step);position:absolute;left:13px;top:12px;
+    width:22px;height:22px;border-radius:7px;display:grid;place-items:center;font-size:11.5px;font-weight:900;
+    color:#20180A;background:linear-gradient(150deg,#F1DFB3,#C9A227)}
+  .flow li b{display:block;color:#fff;font-weight:800;font-size:13.4px;margin-bottom:2px}
+  .flow li span{color:var(--muted);font-size:12.2px}
+
+  .two-col{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}
+  @media(min-width:820px){.two-col{grid-template-columns:1fr 1fr;gap:18px;align-items:start}}
+  .mini{border:1px solid rgba(230,204,147,.22);border-radius:14px;padding:16px;background:rgba(6,15,24,.5)}
+  .mini h3{margin:0 0 10px;font-size:14px;font-weight:900;color:#fff;display:flex;align-items:center;gap:8px}
+  .mini h3 .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none}
+  .mini ul{margin:0;padding-left:0;list-style:none;display:grid;gap:8px}
+  .mini li{position:relative;padding-left:15px;font-size:12.8px;line-height:1.62;color:#DCE7F0}
+  .mini li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:2px;
+    background:rgba(230,204,147,.7)}
+  .mini li b{color:#fff}
+
+  .tl{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+  .tl li{display:grid;grid-template-columns:58px 1fr;gap:10px;border:1px solid rgba(255,255,255,.07);
+    border-radius:11px;padding:11px 13px;background:rgba(255,255,255,.028)}
+  .tl .t{font-size:12px;font-weight:900;color:var(--gold);font-variant-numeric:tabular-nums;padding-top:1px}
+  .tl .d{font-size:12.7px;color:#DCE7F0;line-height:1.6}
+  .tl .d b{display:block;color:#fff;font-size:13.2px;margin-bottom:1px}
+
+  /* ---------- checklist ---------- */
+  .progress{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .bar{flex:1;height:7px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden}
+  .bar i{display:block;height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,#C9A227,#F1DFB3);transition:width .3s ease}
+  .progress .cnt{font-size:12.5px;font-weight:800;color:var(--gold-pale);flex:none}
+  .progress .date{font-size:11.5px;color:var(--muted);flex:none}
+
+  ul.check{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  ul.check li{display:flex;align-items:flex-start;gap:12px;padding:13px 14px;border-radius:12px;
+    background:rgba(255,255,255,.028);border:1px solid rgba(255,255,255,.07);transition:background .15s,border-color .15s}
+  ul.check li:hover{background:rgba(255,255,255,.05)}
+  ul.check li.done{background:rgba(201,162,39,.10);border-color:rgba(230,204,147,.34)}
+  ul.check li.done .ct{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(230,204,147,.6)}
+  ul.check input{position:absolute;opacity:0;width:1px;height:1px}
+  ul.check label{display:flex;align-items:flex-start;gap:12px;cursor:pointer;width:100%;
+    font-size:13.8px;line-height:1.6;color:#E4EDF5;font-weight:600}
+  .box{flex:none;width:22px;height:22px;border-radius:7px;margin-top:1px;
+    border:1.6px solid rgba(230,204,147,.5);display:grid;place-items:center;transition:all .15s ease;background:rgba(6,15,24,.5)}
+  .box svg{width:13px;height:13px;opacity:0;transform:scale(.6);transition:all .15s ease;color:#20180A}
+  input:checked + label .box{background:linear-gradient(150deg,#F1DFB3,#C9A227);border-color:#E6CC93}
+  input:checked + label .box svg{opacity:1;transform:scale(1)}
+  .ct .time{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.04em;color:var(--gold);
+    margin-right:7px;font-variant-numeric:tabular-nums}
+  .ct em{display:block;font-style:normal;font-size:12px;color:var(--muted);font-weight:500;margin-top:3px;line-height:1.55}
+  li.done .ct em{color:rgba(157,176,194,.75)}
+
+  .reset{margin-top:14px;font-size:12px;font-weight:700;color:var(--muted);background:none;border:none;
+    cursor:pointer;padding:6px 0;font-family:inherit;text-decoration:underline;text-underline-offset:3px}
+  .reset:hover{color:var(--gold)}
+
+  /* ---------- table ---------- */
+  .tbl-wrap{margin-top:20px;border:1px solid rgba(230,204,147,.22);border-radius:14px;overflow:hidden;background:rgba(6,15,24,.45)}
+  .tbl-head{display:flex;align-items:center;gap:9px;padding:12px 16px;background:rgba(201,162,39,.10);
+    border-bottom:1px solid rgba(230,204,147,.22);font-size:12.5px;font-weight:900;color:var(--gold-pale);letter-spacing:.02em}
+  .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table{width:100%;border-collapse:collapse;font-size:12.8px;min-width:520px}
+  th,td{text-align:left;padding:11px 14px;vertical-align:top;border-bottom:1px solid rgba(255,255,255,.06)}
+  th{font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;
+    background:rgba(255,255,255,.025);white-space:nowrap}
+  tbody tr:last-child td{border-bottom:none}
+  td:first-child{color:#F2F6FA;font-weight:800;white-space:nowrap}
+  .badge-ok{display:inline-block;font-size:11px;font-weight:900;color:#D7EBC9;background:rgba(120,190,90,.14);
+    border:1px solid rgba(120,190,90,.35);border-radius:5px;padding:0 5px;margin-right:4px}
+  .badge-no{display:inline-block;font-size:11px;font-weight:900;color:#FFC2C6;background:rgba(255,0,16,.14);
+    border:1px solid rgba(255,0,16,.35);border-radius:5px;padding:0 5px;margin-right:4px}
+
+  /* ---------- footer / toast ---------- */
+  footer{margin-top:40px;padding-top:22px;border-top:1px solid rgba(230,204,147,.16);
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;
+    font-size:12px;color:var(--muted)}
+  footer a{color:var(--gold);text-decoration:none}
+  footer .fl{display:flex;gap:14px;flex-wrap:wrap}
+
+  #toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,18px);opacity:0;pointer-events:none;
+    z-index:99;padding:13px 20px;border-radius:999px;font-size:13.5px;font-weight:800;
+    background:linear-gradient(180deg,#F7E9C8,#E6CC93);color:#1C1608;
+    box-shadow:0 18px 40px -14px rgba(0,0,0,.8);transition:all .25s cubic-bezier(.2,.8,.3,1);max-width:calc(100vw - 32px);text-align:center}
+  #toast.show{opacity:1;transform:translate(-50%,0)}
+  #toast.err{background:linear-gradient(180deg,#FF7178,#E0333C);color:#fff}
+
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  @media(max-width:640px){
+    table{min-width:0;font-size:12.2px}
+    th,td{padding:9px 9px}
+    td:first-child{white-space:normal}
+    .card-head{padding:20px 18px 0;gap:11px}
+    .card-body{padding:16px 18px 22px}
+    .wrap{padding:0 14px 56px}
+    .top-in{padding:26px 16px 24px}
+    .btn-row .btn{width:100%}
+    .linkcard .btn{width:100%;flex:none}
+    .pair{justify-content:flex-start}
+  }
+  @media print{.top{background:#fff;color:#000}#toast{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="brandbar">
+      <span class="symbol">꿈</span>
+      <span class="brandtxt">꿈잇다 최강본부</span>
+      <span class="live"><span class="dot"></span>2-PERSON OFFICE</span>
+    </div>
+
+    <h1>최강본부 <span class="gold">김도하 이사</span><span class="sep">&nbsp;·</span> <span class="nw">전용 오피스</span></h1>
+    <p class="sub">박도현 · 김도하 이사 2인 AI 협업 워크스페이스 — 두 피클이 직접 연결되어 홍보·모집·상담·일정을 한 방향으로 밀어붙입니다.</p>
+
+    <div class="members">
+      <span class="m">박도현 <span class="tag">Own</span> <span class="hd">@debin5</span></span>
+      <span class="m">김도하 이사 <span class="tag">GA</span> <span class="hd">@kimoegyeong1</span></span>
+    </div>
+
+    <div class="linkline">
+      <b>연결 상태</b> · 두 피클 직통 연결 완료 · 공유 단계 <b>모두 공유</b> · 관계 <b>꿈잇다GA이사</b>
+    </div>
+
+    <nav class="anchors" aria-label="페이지 바로가기">
+      <a href="#setup">2인 협업 세팅</a>
+      <a href="#links">핵심 추진 링크</a>
+      <a href="#run">추진 방향 · 체크리스트</a>
+      <a href="#flow">실행 브리핑 흐름</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ 1. 2인 협업 세팅 ============ -->
+  <section id="setup">
+    <div class="card">
+      <div class="card-head">
+        <span class="num">01</span>
+        <div>
+          <h2>피클 AI 2인 직통 협업 세팅</h2>
+          <p>각자 자기 피클 채팅창에 한 번만 붙여넣으면, 두 피클이 같은 기준으로 움직입니다.</p>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <div class="pair">
+          <span class="who"><span class="av">박</span><span>박도현 피클<small>@debin5 · 최강본부 총괄</small></span></span>
+          <span class="arrow">⇄ 직통</span>
+          <span class="who"><span class="av">김</span><span>김도하 이사 피클<small>@kimoegyeong1 · 꿈잇다GA 이사</small></span></span>
+        </div>
+
+        <div class="pkg-note">
+          <span class="ico">📋</span>
+          <div><b>사용법 3단계</b> — ① 아래 <b>복사하기</b> 버튼을 누릅니다. ② 해당 피클 채팅창을 열어 그대로 붙여넣습니다. ③ 피클이 <b>“세팅 완료”</b>라고 답하면 연결 끝입니다. 두 사람이 각각 한 번씩만 하면 됩니다.</div>
+        </div>
+
+        <div class="pkg-grid">
+
+          <!-- 김도하 이사 피클 -->
+          <div class="pkg-card primary">
+            <div class="pc-head">
+              <div class="lbl">For · 김도하 이사</div>
+              <h3>김도하 이사 피클에 붙여넣는 세팅 지침</h3>
+              <p>김도하 이사 피클 채팅창에 그대로 붙여넣습니다. 협업 기준·홍보 규칙·브리핑 시간이 한 번에 세팅됩니다.</p>
+            </div>
+            <div class="pc-body">
+              <div class="btn-row">
+                <button type="button" class="btn btn-gold" data-copy="pkgKim" style="flex:1">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M6 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1"/></svg>
+                  김도하 이사 피클 세팅 복사
+                </button>
+              </div>
+              <details class="pkg">
+                <summary>
+                  <span>지침 전문 펼쳐보기</span>
+                  <span class="cnt" data-count="pkgKim"></span>
+                  <span class="arw">▼</span>
+                </summary>
+                <div class="pkg-body" data-body="pkgKim" tabindex="0" role="region" aria-label="김도하 이사 피클 세팅 지침 전문"></div>
+              </details>
+            </div>
+          </div>
+
+          <!-- 박도현 피클 -->
+          <div class="pkg-card">
+            <div class="pc-head">
+              <div class="lbl">For · 박도현</div>
+              <h3>박도현 피클에 붙여넣는 세팅 지침</h3>
+              <p>박도현 피클 쪽 기준입니다. 김도하 이사 피클과 같은 시간표·같은 실행 기준으로 맞춥니다.</p>
+            </div>
+            <div class="pc-body">
+              <div class="btn-row">
+                <button type="button" class="btn btn-ghost" data-copy="pkgPark" style="flex:1">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M6 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1"/></svg>
+                  박도현 피클 세팅 복사
+                </button>
+              </div>
+              <details class="pkg">
+                <summary>
+                  <span>지침 전문 펼쳐보기</span>
+                  <span class="cnt" data-count="pkgPark"></span>
+                  <span class="arw">▼</span>
+                </summary>
+                <div class="pkg-body" data-body="pkgPark" tabindex="0" role="region" aria-label="박도현 피클 세팅 지침 전문"></div>
+              </details>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="btn-row">
+          <button type="button" class="btn btn-ghost" id="sharePkg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+            이 오피스 공유하기
+          </button>
+        </div>
+
+        <div class="pkg-note" style="margin:16px 0 0">
+          <span class="ico">🤝</span>
+          <div><b>대화 원칙</b> — 두 피클의 협업 대화는 <b>추진 방향·실행안·성과</b>만 다룹니다. 꼭 판단이 필요한 사안은 각자의 주인에게 따로 보고하고, 협업 창에는 <b>다음 액션·담당·기한</b>만 올립니다.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. 핵심 추진 링크 ============ -->
+  <section id="links">
+    <div class="card">
+      <div class="card-head">
+        <span class="num">02</span>
+        <div>
+          <h2>최강본부 핵심 추진 링크 &amp; 자료</h2>
+          <p>모든 홍보물의 도착지는 이 네 곳으로 통일합니다. 링크는 눌러서 바로 복사할 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <div class="link-grid">
+
+          <div class="linkcard">
+            <div class="lbl">Landing · 01</div>
+            <div class="title">공식 모집 랜딩페이지</div>
+            <p class="desc">최강본부 사업자·상담사 모집의 기준 페이지. 블로그 프로필·숏폼 설명란에 고정합니다.</p>
+            <div class="urlbox"><code>https://camprec1708-sketch.github.io/kkumitda-recruit/</code></div>
+            <div class="btn-row">
+              <a class="btn btn-gold btn-sm" href="https://camprec1708-sketch.github.io/kkumitda-recruit/" target="_blank" rel="noopener noreferrer">바로 열기</a>
+              <button type="button" class="btn btn-ghost btn-sm" data-copy="urlLanding">링크 복사</button>
+            </div>
+          </div>
+
+          <div class="linkcard">
+            <div class="lbl">Application · 02</div>
+            <div class="title">파트너·부업 신청 네이버 폼</div>
+            <p class="desc">30초 간편 신청. 모든 글·영상의 마지막은 이 폼으로 연결합니다.</p>
+            <div class="urlbox"><code>https://naver.me/5hoX9h7I</code></div>
+            <div class="btn-row">
+              <a class="btn btn-gold btn-sm" href="https://naver.me/5hoX9h7I" target="_blank" rel="noopener noreferrer">바로 열기</a>
+              <button type="button" class="btn btn-ghost btn-sm" data-copy="urlForm">링크 복사</button>
+            </div>
+          </div>
+
+          <div class="linkcard">
+            <div class="lbl">Brand · 03</div>
+            <div class="title">꿈잇다 공식 홈페이지</div>
+            <p class="desc">회사·사업 소개와 센터 안내. 상담 자료로 그대로 전달합니다.</p>
+            <div class="urlbox"><code>https://kkumitda.com</code></div>
+            <div class="btn-row">
+              <a class="btn btn-gold btn-sm" href="https://kkumitda.com" target="_blank" rel="noopener noreferrer">바로 열기</a>
+              <button type="button" class="btn btn-ghost btn-sm" data-copy="urlHome">링크 복사</button>
+            </div>
+          </div>
+
+          <div class="linkcard">
+            <div class="lbl">Team · 04</div>
+            <div class="title">6인 팀 공용 작업실</div>
+            <p class="desc">팀 공통 세팅 지침·공용 배너·금칙어 규격표·팀 체크리스트가 있는 페이지입니다.</p>
+            <div class="urlbox"><code>https://camprec1708-sketch.github.io/kkumitda-recruit/team.html</code></div>
+            <div class="btn-row">
+              <a class="btn btn-gold btn-sm" href="https://camprec1708-sketch.github.io/kkumitda-recruit/team.html" target="_blank" rel="noopener noreferrer">바로 열기</a>
+              <button type="button" class="btn btn-ghost btn-sm" data-copy="urlTeam">링크 복사</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="assets">
+
+          <div class="banner-card">
+            <a href="assets/btn_njob_form.jpg" target="_blank" rel="noopener">
+              <img src="assets/btn_njob_form.jpg" alt="'N잡은 필수!' 꿈잇다 최강본부 간편 신청 배너" loading="lazy" width="600" height="150">
+            </a>
+            <div class="banner-meta">
+              <span>공용 배너 · JPG · 600×150 · 21KB</span>
+              <a class="btn btn-ghost btn-sm" href="assets/btn_njob_form.jpg" download="꿈잇다_최강본부_N잡은필수_배너.jpg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+                배너 다운로드
+              </a>
+            </div>
+          </div>
+
+          <div class="thumb-row">
+            <div class="thumb">
+              <div class="im"><img src="og-image.jpg" alt="최강본부 소개 카드 이미지" loading="lazy" width="1200" height="630"></div>
+              <div class="nm">소개 카드 이미지</div>
+              <div class="sz">JPG · 1200×630</div>
+              <a class="dl" href="og-image.jpg" download="꿈잇다_최강본부_소개카드.jpg">다운로드 →</a>
+            </div>
+            <div class="thumb">
+              <div class="im"><img src="kkumitda-symbol.png" alt="꿈잇다 심볼" loading="lazy" width="128" height="128"></div>
+              <div class="nm">꿈잇다 심볼</div>
+              <div class="sz">PNG · 128×128</div>
+              <a class="dl" href="kkumitda-symbol.png" download="꿈잇다_심볼.png">다운로드 →</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pkg-note" style="margin:18px 0 0">
+          <span class="ico">🔗</span>
+          <div><b>링크 거는 법</b> — 본문에 주소를 글자로 쓰지 않습니다. 배너 이미지를 넣고 이미지에 신청 링크를 걸면 됩니다. 업로드용 이미지는 <b>24.5KB 이하 JPG</b>를 사용하세요.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. 추진 방향 & 체크리스트 ============ -->
+  <section id="run">
+    <div class="card">
+      <div class="card-head">
+        <span class="num">03</span>
+        <div>
+          <h2>추진 방향 &amp; 실행 체크리스트</h2>
+          <p>오늘 무엇을 해서 어떤 숫자를 만들지 — 두 사람이 같은 화면을 보며 확인합니다.</p>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <div class="progress">
+          <span class="date" id="todayLabel">오늘</span>
+          <div class="bar"><i id="bar"></i></div>
+          <span class="cnt" id="progCnt">0 / 5</span>
+        </div>
+
+        <ul class="check" id="checkList">
+          <li>
+            <input type="checkbox" id="c1" data-k="c1">
+            <label for="c1"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span>
+              <span class="ct"><span class="time">08:30</span>두 피클 추진 브리핑 확인<em>오늘 발행 글·영상 1건씩 · 신청 폼 확인 · 상담 예약 목록 → 다음 액션 3개 확정</em></span>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="c2" data-k="c2">
+            <label for="c2"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span>
+              <span class="ct"><span class="time">10:30</span>블로그 정보 글 1건 발행<em>제목 20~26자 · 첫 줄 훅 · 태그 6~8개 · ‘김도하 이사’ 표기 확인</em></span>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="c3" data-k="c3">
+            <label for="c3"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span>
+              <span class="ct"><span class="time">12:30</span>신규 신청 · 상담 연결 점검<em>신청 확인 후 30분 내 1차 연락 → 당일 상담 예약까지 연결</em></span>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="c4" data-k="c4">
+            <label for="c4"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span>
+              <span class="ct"><span class="time">14:30</span>홍보 글 1건 + 영상 3채널 업로드<em>배너에 신청 링크 연결 · 영상에 이름 넣지 않기 · 클립·쇼츠·틱톡 동시</em></span>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="c5" data-k="c5">
+            <label for="c5"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></span>
+              <span class="ct"><span class="time">21:00</span>성과 숫자 정리 → 내일 액션 확정<em>신규 신청 · 상담 예약 · 발행 건수 · 조회수 4곳 점검 후 제목·태그 보완</em></span>
+            </label>
+          </li>
+        </ul>
+
+        <button type="button" class="reset" id="resetBtn">오늘 체크 모두 지우기</button>
+
+        <div class="two-col">
+
+          <div class="mini">
+            <h3><span class="dot"></span>블로그 · 숏폼 홍보 추진 가이드</h3>
+            <ul>
+              <li><b>블로그</b> — 제목은 20~26자, 핵심 키워드를 맨 앞에. 인사말·서론 없이 첫 줄을 훅으로 시작합니다.</li>
+              <li><b>표기</b> — 블로그 글에는 <b>김도하 이사</b>를 쓰고 해시태그 <b>#김도하이사</b>를 앞쪽에 둡니다.</li>
+              <li><b>영상</b> — 클립·쇼츠·틱톡에는 이름을 넣지 않습니다. 혜택과 장면으로 승부합니다.</li>
+              <li><b>영상 구성</b> — 1초 훅 → 빠른 컷 → 강한 비트 → 화면을 채우는 큰 자막, 같은 영상을 3곳 동시 업로드.</li>
+              <li><b>마무리</b> — ‘N잡은 필수!’ 배너에 신청 링크를 걸어 마무리합니다. 본문에 주소를 글자로 노출하지 않습니다.</li>
+            </ul>
+          </div>
+
+          <div class="mini">
+            <h3><span class="dot"></span>표현 기준 — 이렇게 씁니다</h3>
+            <ul>
+              <li><b>정산</b> — 완전판매로 끝난 건을 주 단위로 정산</li>
+              <li><b>교육·출석</b> — 강제 교육·의무 출석 없음</li>
+              <li><b>영업 방식</b> — 대면영업·TM·온라인 통합 시스템</li>
+              <li><b>모집 대상</b> — 사업자·상담사·부업 희망자, 경력 무관</li>
+              <li><b>민감 단어</b> — 업종 관련 민감 단어는 쓰지 않고 여행·가전·건강 이야기로 풀어 씁니다. 전체 목록은 <a href="team.html#rules">팀 공용 작업실 규격표</a>를 따릅니다.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="tbl-wrap">
+          <div class="tbl-head">⚡ 2인 오피스 운영 요약표</div>
+          <div class="tbl-scroll">
+            <table>
+              <thead>
+                <tr><th>항목</th><th>기준</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>이름 표기</td>
+                  <td><span class="badge-ok">블로그</span>김도하 이사 · #김도하이사<br><span class="badge-no">영상</span>클립·쇼츠·틱톡에는 이름 없음</td>
+                </tr>
+                <tr>
+                  <td>유입 통일</td>
+                  <td>모든 글·영상 → ‘N잡은 필수!’ 배너 → 신청 폼(30초)</td>
+                </tr>
+                <tr>
+                  <td>상담 동선</td>
+                  <td>신청 접수 → 30분 내 1차 연락 → 당일 상담 예약 → 팀 합류 → 주간 실행표 배정</td>
+                </tr>
+                <tr>
+                  <td>일일 브리핑</td>
+                  <td>08:30 추진 브리핑 · 12:30 실행 점검 · 21:00 성과 정리</td>
+                </tr>
+                <tr>
+                  <td>주간 점검</td>
+                  <td>월요일 — 지난주 완전판매로 끝난 건 정산 확인 + 주간 실행표 확정</td>
+                </tr>
+                <tr>
+                  <td>협업 대화</td>
+                  <td>추진 방향·실행안·성과만 공유 · 보고는 ‘다음 액션 → 담당 → 기한’</td>
+                </tr>
+                <tr>
+                  <td>이미지</td>
+                  <td>업로드용 24.5KB 이하 JPG · 가로 410~700px</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. 실행 흐름 ============ -->
+  <section id="flow">
+    <div class="card">
+      <div class="card-head">
+        <span class="num">04</span>
+        <div>
+          <h2>신규 파트너 모집 · 상담 연결 동선</h2>
+          <p>유입에서 팀 합류까지 6단계. 두 피클이 같은 동선으로 움직입니다.</p>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <ol class="flow">
+          <li><b>유입</b><span>블로그 글 · 클립·쇼츠·틱톡 · 랜딩페이지에서 신청 폼으로 모입니다.</span></li>
+          <li><b>신청 접수</b><span>네이버 폼 30초 신청. 이름·연락처·가능 시간이 바로 쌓입니다.</span></li>
+          <li><b>30분 내 연락</b><span>접수 확인 후 1차 연락. 가능 시간을 받아 상담 일정을 잡습니다.</span></li>
+          <li><b>당일 상담</b><span>랜딩페이지·공식 홈페이지 자료로 진행 방향과 정산 기준을 설명합니다.</span></li>
+          <li><b>팀 합류</b><span>팀 공용 작업실에서 피클 세팅·배너·체크리스트를 그대로 받습니다.</span></li>
+          <li><b>첫 주 실행</b><span>주간 실행표 배정 → 글 2건·영상 3채널 → 21:00 성과 숫자로 점검합니다.</span></li>
+        </ol>
+
+        <div class="two-col">
+          <div class="mini">
+            <h3><span class="dot"></span>두 피클 일일 브리핑 흐름</h3>
+            <ul class="tl" style="margin-top:2px">
+              <li><span class="t">08:30</span><span class="d"><b>추진 브리핑</b>오늘 발행 1건씩 · 신청 폼 신규 건 · 상담 예약 목록</span></li>
+              <li><span class="t">12:30</span><span class="d"><b>실행 점검</b>오전 발행 결과 · 유입 숫자 공유 · 막힌 곳 담당 지정</span></li>
+              <li><span class="t">21:00</span><span class="d"><b>성과 정리</b>신규 신청·상담 예약·발행 건수 → 내일 액션 3개</span></li>
+              <li><span class="t">월요일</span><span class="d"><b>주간 정산</b>완전판매로 끝난 건 정산 확인 · 주간 실행표 확정</span></li>
+            </ul>
+          </div>
+
+          <div class="mini">
+            <h3><span class="dot"></span>이번 오피스에서 바로 쓰는 것</h3>
+            <ul>
+              <li><b>세팅</b> — 위 01번 카드의 두 지침을 각자 피클에 붙여넣고 “세팅 완료” 확인.</li>
+              <li><b>링크</b> — 02번 카드에서 랜딩·신청 폼·홈페이지·팀 작업실 링크 복사.</li>
+              <li><b>소재</b> — 공용 배너와 소개 카드 이미지 다운로드.</li>
+              <li><b>실행</b> — 03번 체크리스트로 오늘 5단계 확인, 21:00에 숫자 정리.</li>
+              <li><b>공유</b> — 이 페이지 주소를 김도하 이사 피클에 그대로 전달.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>꿈잇다 최강본부 · 김도하 이사 전용 오피스 — 박도현 · 김도하 이사 2인 AI 협업 워크스페이스</span>
+    <span class="fl">
+      <a href="./">모집 안내 페이지 →</a>
+      <a href="team.html">6인 팀 공용 작업실 →</a>
+    </span>
+  </footer>
+</main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script type="text/plain" id="pkgKimSrc">[꿈잇다 최강본부 · 김도하 이사 전용 오피스 세팅]
+
+나는 꿈잇다GA 김도하 이사입니다.
+이 지침은 내 AI 비서인 네가 앞으로 최강본부 2인 협업을 처리할 때의 기준입니다.
+아래 내용을 내 업무 규칙으로 기억해 두고, 내가 "홍보", "모집", "브리핑"이라고 말하면 이 기준대로 바로 실행해 주세요.
+
+■ 1. 협업 구조
+· 나(김도하 이사)와 박도현 님은 꿈잇다 최강본부를 함께 이끄는 2인 파트너입니다.
+· 박도현 님의 AI 비서(피클, @debin5)와 네가 직접 연결되어 있습니다. (공유 단계 '모두 공유', 관계 '꿈잇다GA이사')
+· 홍보·모집·상담·일정은 두 피클이 직접 맞춰서 처리합니다. 사람이 매번 옮겨 적지 않습니다.
+
+■ 2. 말하는 원칙 — 오직 추진 방향
+· 대화는 '무엇을, 언제, 어떻게 실행할지'만 다룹니다.
+· 꼭 판단이 필요한 사안은 나에게만 따로 알려 주세요. 협업 대화에는 실행안만 올립니다.
+· 모든 보고는 "다음 액션 → 담당 → 기한" 순서로 정리합니다.
+· 자리가 잡히면 바로 다음 실행으로 넘어갑니다.
+
+■ 3. 우리가 함께 만드는 성과
+1) 홍보 — 네이버 블로그 + 클립·유튜브 쇼츠·틱톡 3채널.
+2) 모집 — 'N잡은 필수!' 배너 → 간편 신청 폼(https://naver.me/5hoX9h7I)으로 유입 통일.
+3) 상담 — 신청 확인 후 30분 안에 1차 연락, 당일 상담 예약까지 연결.
+4) 일정 — 주간 실행표를 두 피클이 같은 기준으로 관리합니다.
+
+■ 4. 홍보 실무 기준 (최강본부 공통)
+· 블로그 글에는 '김도하 이사' 표기를 사용합니다. (해시태그 #김도하이사 포함)
+· 클립·쇼츠·틱톡 등 모든 영상에는 '김도하'를 넣지 않습니다. 이름 없이 혜택과 장면으로 승부합니다.
+· 블로그 제목은 20~26자, 핵심 키워드를 맨 앞에. 인사말·수다 없이 첫 줄을 훅으로 시작합니다.
+· 본문은 1~2줄마다 줄을 바꾸고, 핵심 문구는 24px 빨강 굵게로 도입·중간·마무리 3회 이상 강조합니다.
+· 영상은 1초 훅 → 빠른 컷 → 강한 비트 → 큰 자막. 같은 영상을 3채널에 동시에 올립니다.
+· 본문에 주소를 글자로 쓰지 않고, 'N잡은 필수!' 배너 이미지에 신청 링크를 겁니다.
+· 업종 관련 민감 단어는 쓰지 않고 여행·가전·건강 이야기로 풀어 씁니다. 전체 목록은 6인 팀 공용 작업실의 규격표를 따릅니다.
+· 정산·교육 표현은 이렇게 씁니다 — "완전판매로 끝난 건을 주 단위로 정산", "강제 교육·의무 출석 없음", "대면영업·TM·온라인 통합 시스템".
+
+■ 5. 하루 브리핑 흐름 (두 피클 공통)
+· 08:30 추진 브리핑 — 오늘 발행할 글·영상 1건씩, 신청 폼 신규 건, 상담 예약 목록.
+· 12:30 실행 점검 — 오전 발행 결과와 유입 숫자를 공유하고 막힌 곳의 담당을 정합니다.
+· 21:00 성과 정리 — 신규 신청·상담 예약·발행 건수를 숫자로 정리하고 내일 액션 3개를 확정합니다.
+· 매주 월요일 — 지난주 완전판매로 끝난 건의 정산 내역과 주간 실행표를 함께 확인합니다.
+
+■ 6. 참고 링크
+· 모집 랜딩페이지 — https://camprec1708-sketch.github.io/kkumitda-recruit/
+· 신청 폼 — https://naver.me/5hoX9h7I
+· 공식 홈페이지 — https://kkumitda.com
+· 6인 팀 공용 작업실 — https://camprec1708-sketch.github.io/kkumitda-recruit/team.html
+· 김도하 이사 전용 오피스 — https://camprec1708-sketch.github.io/kkumitda-recruit/office.html
+
+■ 7. 확인
+위 기준으로 세팅을 마치면 "세팅 완료"라고 짧게 알려 주세요.
+그다음부터는 내가 시키지 않아도 브리핑 시간에 먼저 정리해 주세요.</script>
+
+<script type="text/plain" id="pkgParkSrc">[꿈잇다 최강본부 · 박도현 피클 2인 협업 세팅]
+
+나는 박도현입니다. 꿈잇다 최강본부를 김도하 이사와 2인 체제로 운영합니다.
+이 지침은 네가 최강본부 홍보·모집·상담·일정을 처리할 때의 기준입니다.
+지금부터 이 기준을 내 업무 규칙으로 기억해 두고, 내가 "홍보", "모집", "브리핑"이라고 말하면 바로 실행해 주세요.
+
+■ 1. 협업 구조
+· 김도하 이사(@kimoegyeong1) 피클과 네가 직접 연결되어 있습니다. (공유 단계 '모두 공유', 관계 '꿈잇다GA이사')
+· 두 피클이 홍보·모집·상담·일정을 직접 맞춥니다. 같은 시간표, 같은 실행 기준을 씁니다.
+
+■ 2. 말하는 원칙 — 협업은 추진 방향만
+· 김도하 이사 피클과의 대화는 '무엇을, 언제, 어떻게 실행할지'만 다룹니다.
+· 꼭 판단이 필요한 사안은 나에게만 보고합니다. 협업 대화에는 실행안만 올립니다.
+· 협업 창에는 "다음 액션 → 담당 → 기한"만 올립니다.
+· 자리가 잡히면 바로 다음 실행으로 넘어갑니다.
+
+■ 3. 홍보·모집 실행
+1) 블로그 하루 1~2건 — 정보 글 1건, 홍보 글 1건. 제목 20~26자, 첫 줄 훅.
+2) 클립·유튜브 쇼츠·틱톡에 같은 영상을 3곳 동시 업로드.
+3) 모든 글·영상의 마지막은 'N잡은 필수!' 배너 → 신청 폼(https://naver.me/5hoX9h7I).
+4) 블로그에는 '김도하 이사' 표기(해시태그 #김도하이사), 영상 3채널에는 이름을 넣지 않습니다.
+5) 민감 단어는 쓰지 않고 여행·가전·건강 이야기로 풀어 씁니다. 전체 목록은 6인 팀 공용 작업실 규격표를 따릅니다.
+6) 정산·교육 표현은 "완전판매로 끝난 건을 주 단위로 정산", "강제 교육·의무 출석 없음", "대면영업·TM·온라인 통합 시스템"으로 씁니다.
+
+■ 4. 상담 연결 동선
+신청 접수 → 30분 내 1차 연락 → 당일 상담 예약 → 팀 합류 → 주간 실행표 배정.
+접수 건은 담당과 연락 시각을 적어 두고, 밀린 건이 없도록 12:30에 한 번 더 확인합니다.
+
+■ 5. 하루 브리핑 흐름
+· 08:30 추진 브리핑 — 오늘 발행 계획, 신청 폼 신규 건, 상담 예약 목록.
+· 12:30 실행 점검 — 오전 결과와 유입 숫자 공유.
+· 21:00 성과 정리 — 신규 신청·상담 예약·발행 건수 → 내일 액션 3개.
+· 매주 월요일 — 지난주 완전판매로 끝난 건 정산 확인 + 주간 실행표 확정.
+
+■ 6. 참고 링크
+· 김도하 이사 전용 오피스 — https://camprec1708-sketch.github.io/kkumitda-recruit/office.html
+· 모집 랜딩페이지 — https://camprec1708-sketch.github.io/kkumitda-recruit/
+· 6인 팀 공용 작업실 — https://camprec1708-sketch.github.io/kkumitda-recruit/team.html
+
+■ 7. 확인
+위 기준으로 세팅을 마치면 "세팅 완료"라고 짧게 알려 주세요.</script>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- toast ---------- */
+  var toastEl = document.getElementById('toast');
+  var toastTimer = null;
+  function toast(msg, isErr){
+    toastEl.textContent = msg;
+    toastEl.className = isErr ? 'show err' : 'show';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.className = isErr ? 'err' : ''; }, 2600);
+  }
+
+  /* ---------- copy helper ---------- */
+  function legacyCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly','');
+    ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch(e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).then(function(){ return true; })
+        .catch(function(){ return legacyCopy(text); });
+    }
+    return Promise.resolve(legacyCopy(text));
+  }
+
+  /* ---------- packages ---------- */
+  var packs = {};
+  [['pkgKim','pkgKimSrc'],['pkgPark','pkgParkSrc']].forEach(function(pair){
+    var el = document.getElementById(pair[1]);
+    var text = el.textContent.replace(/^\s+|\s+$/g, '') + '\n';
+    packs[pair[0]] = text;
+    var body = document.querySelector('[data-body="' + pair[0] + '"]');
+    if (body) body.textContent = text;
+    var cnt = document.querySelector('[data-count="' + pair[0] + '"]');
+    if (cnt) cnt.textContent = '약 ' + text.replace(/\s/g,'').length.toLocaleString('ko-KR') + '자';
+  });
+
+  var urls = {
+    urlLanding: 'https://camprec1708-sketch.github.io/kkumitda-recruit/',
+    urlForm: 'https://naver.me/5hoX9h7I',
+    urlHome: 'https://kkumitda.com',
+    urlTeam: 'https://camprec1708-sketch.github.io/kkumitda-recruit/team.html'
+  };
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function(btn){
+    btn.addEventListener('click', function(){
+      var key = btn.getAttribute('data-copy');
+      var text = packs[key] || urls[key] || '';
+      copyText(text).then(function(ok){
+        if (ok) {
+          toast(key.indexOf('url') === 0 ? '✅ 링크 복사 완료' : '✅ 세팅 지침 복사 완료 — 피클 채팅창에 붙여넣으세요');
+        } else {
+          if (packs[key]) {
+            var det = btn.closest('.pkg-card').querySelector('details.pkg');
+            if (det) det.open = true;
+            var body = document.querySelector('[data-body="' + key + '"]');
+            if (body) {
+              var r = document.createRange(); r.selectNodeContents(body);
+              var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+            }
+          }
+          toast('복사가 막혔어요. 내용을 길게 눌러 복사해 주세요', true);
+        }
+      });
+    });
+  });
+
+  /* ---------- share ---------- */
+  var shareBtn = document.getElementById('sharePkg');
+  if (navigator.share) {
+    shareBtn.addEventListener('click', function(){
+      navigator.share({
+        title: '최강본부 김도하 이사 전용 오피스',
+        text: '박도현 · 김도하 이사 2인 AI 협업 워크스페이스',
+        url: location.href
+      }).catch(function(){});
+    });
+  } else {
+    shareBtn.style.display = 'none';
+  }
+
+  /* ---------- checklist ---------- */
+  function todayKey(){
+    var d = new Date();
+    return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  }
+  var KEY = 'kgb-office-list-' + todayKey();
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#checkList input[type=checkbox]'));
+  var bar = document.getElementById('bar');
+  var progCnt = document.getElementById('progCnt');
+
+  var dl = document.getElementById('todayLabel');
+  var now = new Date();
+  var wd = ['일','월','화','수','목','금','토'][now.getDay()];
+  dl.textContent = (now.getMonth()+1) + '/' + now.getDate() + ' (' + wd + ')';
+
+  function read(){
+    try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ return {}; }
+  }
+  function save(state){
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){}
+  }
+  function paint(){
+    var done = 0;
+    boxes.forEach(function(b){
+      var li = b.closest('li');
+      if (b.checked) { li.classList.add('done'); done++; } else { li.classList.remove('done'); }
+    });
+    progCnt.textContent = done + ' / ' + boxes.length;
+    bar.style.width = Math.round(done / boxes.length * 100) + '%';
+  }
+
+  var state = read();
+  boxes.forEach(function(b){
+    b.checked = !!state[b.dataset.k];
+    b.addEventListener('change', function(){
+      state[b.dataset.k] = b.checked;
+      save(state);
+      paint();
+      if (boxes.every(function(x){ return x.checked; })) {
+        toast('🎉 오늘 5단계 모두 완료 — 두 피클에 성과 숫자를 공유하세요');
+      }
+    });
+  });
+  paint();
+
+  document.getElementById('resetBtn').addEventListener('click', function(){
+    state = {};
+    save(state);
+    boxes.forEach(function(b){ b.checked = false; });
+    paint();
+    toast('오늘 체크를 모두 지웠습니다');
+  });
+
+  try {
+    for (var i = localStorage.length - 1; i >= 0; i--) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('kgb-office-list-') === 0 && k !== KEY) localStorage.removeItem(k);
+    }
+  } catch(e){}
+})();
+</script>
+</body>
+</html>
