@@ -80,7 +80,7 @@
   /* ── hero ── */
   header.hero{padding:44px 0 8px;text-align:center}
   .wordmark{display:flex;flex-direction:column;align-items:center;gap:6px}
-  .wordmark .brand{font-family:var(--serif);font-size:13px;letter-spacing:.42em;color:var(--gold-soft);padding-left:.42em}
+  .wordmark .brand{font-family:var(--serif);font-size:13px;letter-spacing:.24em;color:var(--gold-soft);padding-left:.24em}
   .wordmark .sub{font-size:10px;letter-spacing:.22em;color:rgba(245,239,225,.5);padding-left:.22em}
   .badge{
     display:inline-flex;align-items:center;gap:8px;margin-top:26px;
@@ -120,9 +120,9 @@
     background:linear-gradient(180deg,rgba(13,27,42,.18) 0%,rgba(13,27,42,0) 30%,rgba(13,27,42,.55) 100%);
   }
   .art-cap{
-    position:absolute;left:0;right:0;bottom:0;padding:16px 18px;
-    display:flex;align-items:baseline;justify-content:space-between;gap:10px;
-    font-size:9.5px;letter-spacing:.26em;color:rgba(245,239,225,.85)
+    position:absolute;left:0;right:0;bottom:0;padding:15px 16px;
+    display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+    font-size:9px;letter-spacing:.18em;color:rgba(245,239,225,.85);white-space:nowrap
   }
   .art-cap b{font-weight:500;color:var(--gold-soft)}
   .art-cap span{color:rgba(245,239,225,.62)}
@@ -158,13 +158,13 @@
   }
   .dedication p{margin:0 0 1.05em}
   .dedication p:last-of-type{margin-bottom:0}
-  .dedication .accent{color:#8A6B14}
+  .dedication .accent{color:#8A6B14;white-space:nowrap}
   .sign{
     margin-top:26px;padding-top:18px;border-top:1px solid rgba(169,135,34,.25);
     text-align:center
   }
   .sign .from{font-size:10px;letter-spacing:.26em;color:#8C7A4B}
-  .sign .who{font-family:var(--serif);font-size:15px;color:#1B2635;margin-top:6px;letter-spacing:.02em}
+  .sign .sign-who{font-family:var(--serif);font-size:15px;color:#1B2635;margin-top:6px;letter-spacing:.02em}
   .sign .seal{
     display:inline-flex;align-items:center;justify-content:center;
     width:34px;height:34px;margin-top:12px;border-radius:50%;
@@ -183,7 +183,7 @@
 
   /* ── guestbook wall ── */
   .wall-card{
-    margin-top:22px;border-radius:14px;padding:8px 20px;
+    margin-top:22px;border-radius:14px;padding:8px 18px;
     background:linear-gradient(180deg,rgba(245,239,225,.065),rgba(245,239,225,.025));
     border:1px solid rgba(212,175,55,.24);
   }
@@ -193,20 +193,29 @@
     font-size:10.5px;letter-spacing:.14em;color:rgba(245,239,225,.5)
   }
   .wall-meta b{font-weight:500;color:var(--gold-soft)}
-  ol.wall{list-style:none;margin:0;padding:0}
+  ol.wall{
+    list-style:none;margin:0;padding:16px 0 4px;
+    display:grid;grid-template-columns:1fr 1fr;gap:9px;
+  }
   ol.wall li{
-    display:flex;align-items:center;gap:14px;
-    padding:15px 2px;border-bottom:1px solid rgba(212,175,55,.13);
+    display:flex;flex-direction:column;gap:7px;
+    min-height:82px;padding:12px 12px 11px;border-radius:10px;
+    border:1px solid rgba(212,175,55,.30);
+    background:linear-gradient(180deg,rgba(212,175,55,.07),rgba(212,175,55,.02));
   }
-  ol.wall li:last-child{border-bottom:0}
+  ol.wall li.pending{
+    border-style:dashed;border-color:rgba(212,175,55,.22);
+    background:rgba(245,239,225,.02);
+  }
   .who{
-    flex:0 0 88px;font-size:12.5px;font-weight:500;color:var(--gold-soft);
-    letter-spacing:.02em;
+    font-size:12px;font-weight:500;color:var(--gold-soft);letter-spacing:.02em;
+    display:flex;align-items:center;gap:6px;
   }
-  .who small{display:block;font-size:9px;letter-spacing:.2em;color:rgba(245,239,225,.32);margin-top:2px;font-weight:400}
-  .msg{flex:1;font-size:13px;line-height:1.7;color:rgba(245,239,225,.9)}
-  li.pending .msg{color:rgba(245,239,225,.3);font-style:italic;letter-spacing:.02em}
-  li.pending .who{color:rgba(233,208,139,.72)}
+  .who::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.7;flex:none}
+  .msg{font-size:12.5px;line-height:1.72;color:rgba(245,239,225,.92);letter-spacing:-.01em}
+  li.pending .msg{color:rgba(245,239,225,.28);font-style:italic}
+  li.pending .who{color:rgba(233,208,139,.62)}
+  li.pending .who::before{background:rgba(233,208,139,.35)}
   .wall-note{
     margin:14px 2px 16px;font-size:11px;line-height:1.75;color:rgba(245,239,225,.42)
   }
@@ -224,7 +233,7 @@
   .compose h3 span{font-family:var(--sans);font-size:9.5px;letter-spacing:.22em;color:var(--gold-soft)}
   .compose .lead{margin:8px 0 16px;font-size:12px;line-height:1.75;color:rgba(245,239,225,.6)}
   .field{margin-top:12px}
-  .field label{display:block;font-size:10.5px;letter-spacing:.16em;color:rgba(233,208,139,.85);margin-bottom:7px}
+  .field label{display:block;font-size:11px;letter-spacing:.05em;color:rgba(233,208,139,.85);margin-bottom:7px}
   .field input,.field textarea{
     width:100%;border:1px solid rgba(212,175,55,.32);border-radius:9px;
     background:rgba(8,18,29,.55);color:var(--ivory);
@@ -294,6 +303,7 @@
     #dust,.compose,.toast{display:none}
   }
 </style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 <canvas id="dust" aria-hidden="true"></canvas>
@@ -321,9 +331,9 @@
 
   <figure class="art reveal" style="margin-bottom:0">
     <div class="art-frame">
-      <img src="nha-trang-night.jpg" width="1024" height="1536"
+      <img src="nha-trang-night.jpg" width="1024" height="1536" fetchpriority="high" decoding="async"
            alt="금빛 보름달이 뜬 나트랑의 밤바다와 야자수, 등대가 그려진 네이비·골드 일러스트">
-      <figcaption class="art-cap"><b>NHA TRANG</b><span>DEC 04, 2026 · KHÁNH HÒA, VIỆT NAM</span></figcaption>
+      <figcaption class="art-cap"><b>NHA TRANG · VIỆT NAM</b><span>DEC 04 · 2026</span></figcaption>
     </div>
   </figure>
 
@@ -342,7 +352,7 @@
 
     <div class="sign">
       <div class="from">WITH ALL OUR HEARTS</div>
-      <div class="who serif">꿈잇다 최강본부 10인 일동</div>
+      <div class="sign-who serif">꿈잇다 최강본부 10인 일동</div>
       <div class="seal serif">壽</div>
     </div>
   </section>
@@ -359,14 +369,14 @@
       <ol class="wall" id="wall">
         <li class="pending"><span class="who">박도현</span><span class="msg">한 줄 축하 준비 중</span></li>
         <li class="pending"><span class="who">김도하 이사</span><span class="msg">한 줄 축하 준비 중</span></li>
-        <li class="pending"><span class="who">최강본부 팀원<small>03</small></span><span class="msg">한 줄 축하 대기</span></li>
-        <li class="pending"><span class="who">최강본부 팀원<small>04</small></span><span class="msg">한 줄 축하 대기</span></li>
-        <li class="pending"><span class="who">최강본부 팀원<small>05</small></span><span class="msg">한 줄 축하 대기</span></li>
-        <li class="pending"><span class="who">최강본부 팀원<small>06</small></span><span class="msg">한 줄 축하 대기</span></li>
-        <li class="pending"><span class="who">최강본부 팀원<small>07</small></span><span class="msg">한 줄 축하 대기</span></li>
-        <li class="pending"><span class="who">최강본부 팀원<small>08</small></span><span class="msg">한 줄 축하 대기</span></li>
-        <li class="pending"><span class="who">최강본부 팀원<small>09</small></span><span class="msg">한 줄 축하 대기</span></li>
-        <li class="pending"><span class="who">최강본부 팀원<small>10</small></span><span class="msg">한 줄 축하 대기</span></li>
+        <li class="pending"><span class="who">최강본부 팀원</span><span class="msg">한 줄 축하 대기</span></li>
+        <li class="pending"><span class="who">최강본부 팀원</span><span class="msg">한 줄 축하 대기</span></li>
+        <li class="pending"><span class="who">최강본부 팀원</span><span class="msg">한 줄 축하 대기</span></li>
+        <li class="pending"><span class="who">최강본부 팀원</span><span class="msg">한 줄 축하 대기</span></li>
+        <li class="pending"><span class="who">최강본부 팀원</span><span class="msg">한 줄 축하 대기</span></li>
+        <li class="pending"><span class="who">최강본부 팀원</span><span class="msg">한 줄 축하 대기</span></li>
+        <li class="pending"><span class="who">최강본부 팀원</span><span class="msg">한 줄 축하 대기</span></li>
+        <li class="pending"><span class="who">최강본부 팀원</span><span class="msg">한 줄 축하 대기</span></li>
       </ol>
       <p class="wall-note">※ 아직 팀원 한 줄 축하가 취합되기 전입니다. 완성 전에는 이 링크를 대표님께 바로 보내지 말아 주세요.</p>
     </div>
@@ -467,6 +477,8 @@
   } else {
     reveals.forEach(function(el){ el.classList.add('in'); });
   }
+  /* safety: never leave content hidden (screenshots, odd viewports) */
+  setTimeout(function(){ reveals.forEach(function(el){ el.classList.add('in'); }); }, 2000);
 
   /* ── toast ── */
   var toastEl = document.getElementById('toast'), toastTimer;
@@ -486,9 +498,12 @@
   var MAX = 80;
 
   function clean(s){ return (s || '').replace(/\s+/g, ' ').trim(); }
+  function stripAddr(s){
+    return s.replace(/^(조영신\s*)?(대표님|대표|사장님)\s*[,!.、~]?\s*/, '').trim();
+  }
   function composed(){
     var n = clean(nameEl.value) || '최강본부 팀원';
-    var m = clean(msgEl.value) || '생신을 진심으로 축하드립니다.';
+    var m = stripAddr(clean(msgEl.value)) || '생신을 진심으로 축하드립니다.';
     return { name: n, msg: m, full: '조영신 대표님, ' + m + ' — ' + n };
   }
   function render(){
