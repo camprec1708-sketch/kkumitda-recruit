@@ -65,7 +65,7 @@
       linear-gradient(180deg,#0D1B2A 0%,#0B1725 48%,#091320 100%);
   }
   #dust{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
-  .wrap{position:relative;z-index:2;max-width:680px;margin:0 auto;padding:0 20px 56px}
+  .wrap{position:relative;z-index:2;max-width:680px;margin:0 auto;padding:0 20px calc(56px + env(safe-area-inset-bottom,0px))}
 
   /* ── typography helpers ── */
   .serif{font-family:var(--serif)}
@@ -291,6 +291,7 @@
 
   @media (min-width:620px){
     .wrap{padding:0 28px 72px}
+    .art{max-width:470px}
     header.hero{padding-top:58px}
     .paper{padding:44px 40px 38px}
     .dedication{font-size:16px}
